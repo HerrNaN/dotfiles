@@ -8,7 +8,8 @@ ALL := \
 	config.fish \
 	kubectl.fish \
 	minikube.fish \
-	emacs.service
+	emacs.service \
+	.gitconfig
 
 .PHONY: all
 all: $(ALL)
@@ -32,3 +33,7 @@ minikube.fish:
 .PHONY: emacs.service
 emacs.service:
 	$(call link,$@,~/.config/systemd/user)
+
+.PHONY:
+.gitconfig:
+	$(call link,$@,~)

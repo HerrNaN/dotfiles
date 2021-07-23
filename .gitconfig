@@ -1,0 +1,7 @@
+[user]
+	name = Karl Wikström
+	signingkey = 7B4A64663CF5C280D6EA02444C2F7833ED3BA8D7
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2
