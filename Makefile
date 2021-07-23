@@ -7,7 +7,8 @@ ALL := \
 	.spacemacs \
 	config.fish \
 	kubectl.fish \
-	minikube.fish
+	minikube.fish \
+	emacs.service
 
 .PHONY: all
 all: $(ALL)
@@ -27,3 +28,7 @@ kubectl.fish:
 .PHONY: minikube.fish
 minikube.fish:
 	$(call link,$@,~/.config/fish/completions)
+
+.PHONY: emacs.service
+emacs.service:
+	$(call link,$@,~/.config/systemd/user)
