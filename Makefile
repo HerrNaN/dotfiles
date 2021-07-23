@@ -34,6 +34,6 @@ minikube.fish:
 emacs.service:
 	$(call link,$@,~/.config/systemd/user)
 
-.PHONY:
+.PHONY: .gitconfig
 .gitconfig:
 	$(call link,$@,~)
