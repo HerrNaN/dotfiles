@@ -34,22 +34,24 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(systemd
-     shell-scripts
-     python
-     html
+   '(
+     ;; ---------------------
+     ;; Languages
+     ;; ---------------------
+     docker
+     emacs-lisp
+
      (go :variables
          go-backend 'lsp
          go-tab-width 4
          gofmt-command "goimports"
-         go-use-golangci-lint t
-         )
-     yaml
+         go-use-golangci-lint t)
+
+     html
      javascript
-     (typescript :variables
-                 typescript-fmt-on-save t
-                 tab-width 2
-                 typescript-indent-level 2)
+     markdown
+     python
+
      (react :variables
             web-mode-indent-style 2
             web-mode-code-indent-offset 2
@@ -57,17 +59,19 @@ This function should only modify configuration layer settings."
             web-mode-markup-indent-offset 2
             js2-basic-offset 2)
 
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
-     ;; `M-m f e R' (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
-     docker
+     systemd
+     shell-scripts
+
+     (typescript :variables
+                 typescript-fmt-on-save t
+                 tab-width 2
+                 typescript-indent-level 2)
+
+     yaml
+     ;; ---------------------
 
      auto-completion
      better-defaults
-     emacs-lisp
-     git
      helm
 
      (lsp :variables
@@ -79,17 +83,17 @@ This function should only modify configuration layer settings."
           company-minimum-prefix-length 1
           create-lockfiles 'nil)
 
-     markdown
      multiple-cursors
      org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
      syntax-checking
+
+     ;; Version Control
+     git
      (version-control :variables
                       version-control-diff-tool 'diff-hl
                       version-control-global-margin 't)
+
+     ;; File explorer
      (treemacs :variables
                treemacs-width 35)
      )
