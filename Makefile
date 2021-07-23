@@ -3,8 +3,14 @@ current_dir := $(abspath $(dir mkfile_path))
 
 link = ln -sb ${current_dir}/$(1) $(2)/$(1)
 
+ALL := \
+	.spacemacs \
+	config.fish \
+	kubectl.fish \
+	minikube.fish
+
 .PHONY: all
-all: .spacemacs config.fish kubectl.fish minikube.fish
+all: $(ALL)
 
 .PHONY: .spacemacs
 .spacemacs:
