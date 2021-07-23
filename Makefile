@@ -4,7 +4,7 @@ current_dir := $(abspath $(dir mkfile_path))
 link = ln -sb ${current_dir}/$(1) $(2)/$(1)
 
 .PHONY: all
-all: .spacemacs config.fish
+all: .spacemacs config.fish kubectl.fish
 
 .PHONY: .spacemacs
 .spacemacs:
@@ -13,3 +13,7 @@ all: .spacemacs config.fish
 .PHONY: config.fish
 config.fish:
 	$(call link,$@,~/.config/fish)
+
+.PHONY: kubectl.fish
+kubectl.fish:
+	$(call link,$@,~/.config/fish/completions)
