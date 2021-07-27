@@ -7,6 +7,8 @@ set -x SSH_ASKPASS /usr/bin/ksshaskpass
 # GPG
 set -x GPG_TTY (tty)
 
+set -x GIT_ASKPASS /usr/bin/ksshaskpass
+
 # PATH
 fish_add_path $HOME/go/bin
 fish_add_path $HOME/.yarn/bin
@@ -14,4 +16,3 @@ fish_add_path $HOME/.npm-global/bin
 fish_add_path $HOME/.local/bin
 
 set -x BROWSER /usr/bin/qutebrowser
-
