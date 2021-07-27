@@ -2,6 +2,7 @@ set -U fish_greeting
 
 # SSH
 set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
+set -x SSH_ASKPASS /usr/bin/ksshaskpass
 
 # GPG
 set -x GPG_TTY (tty)
