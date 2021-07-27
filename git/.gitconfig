@@ -1,6 +1,6 @@
 [user]
 	name = Karl Wikström
-	signingkey = 4A925DF8A57FA0A130B7E35AD737E8ECC1C391D5
+	signingkey = EA5C53AAEAE607E1A1F63EF21E44DAE3F488A34B
 [commit]
 	gpgsign = true
 [gpg]
