@@ -95,6 +95,7 @@ This function should only modify configuration layer settings."
 
      ;; File explorer
      (treemacs :variables
+               treemacs-lock-width t
                treemacs-width 35)
      )
 
