@@ -1,7 +1,11 @@
 [user]
 	name = Karl Wikström
-	signingkey = EA5C53AAEAE607E1A1F63EF21E44DAE3F488A34B
 [commit]
 	gpgsign = true
 [gpg]
 	program = gpg2
+
+# This allows for different signing keys on different setups
+# without causing clashes.
+[include]
+	path = ~/.gitconfig_signingkey
