@@ -15,3 +15,5 @@
 [include]
 	path = ~/.gitconfig_signingkey
 
+[init]
+	defaultBranch = main
