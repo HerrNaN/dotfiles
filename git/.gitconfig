@@ -14,3 +14,4 @@
 # without causing clashes.
 [include]
 	path = ~/.gitconfig_signingkey
+
