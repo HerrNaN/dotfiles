@@ -1,3 +1,8 @@
+[include]
+	path = ~/.gitconfig.personal
+[includeIf "gitdir:~/work/"]
+	path = ~/.gitconfig.work
+
 [user]
 	name = Karl Wikström
 [commit]
