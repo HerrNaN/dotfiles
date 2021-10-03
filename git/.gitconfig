@@ -20,3 +20,8 @@
 
 [push]
 	default = current
+
+[alias]
+	s = status --short
+	l = log --oneline
+	r = rebase
