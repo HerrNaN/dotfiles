@@ -14,3 +14,5 @@ fish_add_path $HOME/.npm-global/bin
 fish_add_path $HOME/.local/bin
 
 set -x BROWSER /usr/bin/qutebrowser
+
+alias ec 'emacsclient -c -a "emacs"'
