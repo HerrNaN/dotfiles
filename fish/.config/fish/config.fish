@@ -16,3 +16,4 @@ fish_add_path $HOME/.local/bin
 set -x BROWSER /usr/bin/qutebrowser
 
 alias ec 'emacsclient -c -a "emacs"'
+alias g git
