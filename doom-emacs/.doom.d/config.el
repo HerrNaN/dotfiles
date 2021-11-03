@@ -67,4 +67,5 @@
 
 ;; Treemacs
 (setq! treemacs-follow-mode t
+       treemacs-width 45
        treemacs-project-follow-mode t)
