@@ -50,3 +50,4 @@
 ;(unpin! t)
 
 (package! feature-mode)
+(package! gitconfig)
