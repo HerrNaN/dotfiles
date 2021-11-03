@@ -67,5 +67,4 @@
 
 ;; Treemacs
 (setq! treemacs-follow-mode t
-       treemacs-git-mode 'extended
        treemacs-project-follow-mode t)
