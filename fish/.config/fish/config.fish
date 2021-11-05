@@ -12,6 +12,7 @@ fish_add_path $HOME/go/bin
 fish_add_path $HOME/.yarn/bin
 fish_add_path $HOME/.npm-global/bin
 fish_add_path $HOME/.local/bin
+fish_add_path $HOME/proj/doomemacs/bin
 
 set -x BROWSER /usr/bin/qutebrowser
 
