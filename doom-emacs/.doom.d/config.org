@@ -72,3 +72,9 @@ I would like to be able to access the treemacs window like in Spacemacs
       #'treemacs-select-window)
 
 #+end_src
+** Magit
+Automatically refresh the status buffer when new changes are saved
+#+begin_src emacs-lisp
+(with-eval-after-load 'magit-mode
+  (add-hook 'after-save-hook 'magit-after-save-refresh-status t))
+#+end_src
