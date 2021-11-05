@@ -38,6 +38,12 @@ numbers are disabled. For relative line numbers, set this to `relative'.
       #'comment-line)
 #+end_src
 
+#+begin_src emacs-lisp
+(map! :desc "Use evil scroll up"
+      :n "C-u"
+      #'evil-scroll-up)
+#+end_src
+
 * Packages
 ** Org
 If you use `org' and don't want your org files in the default location below,
