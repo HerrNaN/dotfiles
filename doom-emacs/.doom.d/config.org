@@ -88,7 +88,6 @@ I would like to be able to access the treemacs window like in Spacemacs
       :desc "Select treemacs window"
       :n "0"
       #'treemacs-select-window)
-
 #+end_src
 ** Magit
 Automatically refresh the status buffer when new changes are saved
