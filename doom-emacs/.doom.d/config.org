@@ -13,6 +13,10 @@ clients, file templates and snippets.
 #+begin_src elisp
 (setq which-key-idle-delay 0.5) ;; I need the help, I really do
 #+end_src
+Some simple global settings
+#+begin_src elisp
+(display-time-mode 1)  ; Enable time in the mode-line
+
 * Doom
 ** Theme
 Set the default theme
