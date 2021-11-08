@@ -17,6 +17,10 @@ Some simple global settings
 #+begin_src elisp
 (display-time-mode 1)  ; Enable time in the mode-line
 
+(unless (string-match-p "^Power N/A" (battery))   ; On laptops...
+  (display-battery-mode 1))                       ; it's nice to know how much power you have
+#+end_src
+
 * Doom
 ** Theme
 Set the default theme
