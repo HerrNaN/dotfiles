@@ -8,7 +8,11 @@ clients, file templates and snippets.
 (setq user-full-name "Karl Wikström"
       user-mail-address "karl@wikstrom.io")
 #+end_src
+* Defaults
 
+#+begin_src elisp
+(setq which-key-idle-delay 0.5) ;; I need the help, I really do
+#+end_src
 * Doom
 ** Theme
 Set the default theme
