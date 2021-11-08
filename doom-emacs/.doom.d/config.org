@@ -35,6 +35,12 @@ Start every frame maximized
 #+begin_src emacs-lisp
 (add-to-list 'initial-frame-alist '(fullscreen . fullboth))
 #+end_src
+** Windows
+#+begin_src elisp
+(defadvice! prompt-for-buffer (&rest _)
+  :after '(evil-window-split evil-window-vsplit)
+  (consult-buffer))
+#+end_src
 
 * Editor
 This determines the style of line numbers in effect. If set to `nil', line
