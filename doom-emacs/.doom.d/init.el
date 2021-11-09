@@ -192,5 +192,3 @@
        :config
        literate
        (default +bindings +smartparens))
-
- (org-babel-load-file (expand-file-name "config.org" doom-private-dir))
