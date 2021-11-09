@@ -9,41 +9,42 @@ clients, file templates and snippets.
       user-mail-address "karl@wikstrom.io")
 #+end_src
 * Defaults
-
+Show which-key minibuffer faster
 #+begin_src elisp
 (setq which-key-idle-delay 0.5) ;; I need the help, I really do
 #+end_src
-Some simple global settings
+** Mode line
+Show time in modeline
 #+begin_src elisp
 (display-time-mode 1)             ; Enable time in the mode-line
 (setq display-time-24hr-format t) ; Enable 24h time format
+#+end_src
 
+Show battery percentage in mode line if on a laptop
+#+begin_src elisp
 (unless (string-match-p "^Power N/A" (battery))   ; On laptops...
   (display-battery-mode 1))                       ; it's nice to know how much power you have
 #+end_src
 
-* Doom
+* UI
 ** Theme
-Set the default theme
+Set the default theme.
+To try out the options run ~consult-theme~ (SPC h t)
 #+begin_src emacs-lisp
 (setq doom-theme 'doom-one)
 #+end_src
-
-To try out the options run ~consult-theme~ (SPC h t)
-
-** Frames
+** Frame
 Start every frame maximized
 #+begin_src emacs-lisp
 (add-to-list 'initial-frame-alist '(fullscreen . fullboth))
 #+end_src
-** Windows
+** Window
 #+begin_src elisp
 (defadvice! prompt-for-buffer (&rest _)
   :after '(evil-window-split evil-window-vsplit)
   (consult-buffer))
 #+end_src
-
-* Editor
+** Editor
 This determines the style of line numbers in effect. If set to `nil', line
 numbers are disabled. For relative line numbers, set this to `relative'.
 #+begin_src emacs-lisp
@@ -83,17 +84,15 @@ change `org-directory'. It must be set before org loads!
   (org-clock-mode-line-total 'today "Show me how much time I've worked on the task today"))
 #+end_src
 ** Treemacs
-Treemacs is the file tree that shows up at the left of the screen
 #+begin_src emacs-lisp
 (use-package! treemacs
   :init
-  (setq treemacs-width 45
-        +treemacs-git-mode 'extended)
+  (setq treemacs-width 45               ; A little bit wider
+        +treemacs-git-mode 'extended)   ; What has changed?
 
   :config
-  (treemacs-follow-mode t))
+  (treemacs-follow-mode t))             ; Were am I?
 #+end_src
-
 *** Keybinds
 I would like to be able to access the treemacs window like in Spacemacs
 #+begin_src emacs-lisp
