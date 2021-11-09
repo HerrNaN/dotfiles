@@ -15,7 +15,8 @@ clients, file templates and snippets.
 #+end_src
 Some simple global settings
 #+begin_src elisp
-(display-time-mode 1)  ; Enable time in the mode-line
+(display-time-mode 1)             ; Enable time in the mode-line
+(setq display-time-24hr-format t) ; Enable 24h time format
 
 (unless (string-match-p "^Power N/A" (battery))   ; On laptops...
   (display-battery-mode 1))                       ; it's nice to know how much power you have
