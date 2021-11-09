@@ -63,6 +63,11 @@ numbers are disabled. For relative line numbers, set this to `relative'.
 #+end_src
 
 * Packages
+Add external packages
+#+begin_src elisp :tangle packages.el
+(package! feature-mode) ; Cucumber Gherkin files
+(package! gitconfig)    ; Gitconfig
+#+end_src
 ** Org
 If you use `org' and don't want your org files in the default location below,
 change `org-directory'. It must be set before org loads!
