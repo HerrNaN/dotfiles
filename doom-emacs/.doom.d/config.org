@@ -75,6 +75,13 @@ change `org-directory'. It must be set before org loads!
 #+begin_src emacs-lisp
 (setq org-directory "~/org/")
 #+end_src
+
+#+begin_src elisp
+(use-package! org-clock
+  :defer
+  :custom
+  (org-clock-mode-line-total 'today "Show me how much time I've worked on the task today"))
+#+end_src
 ** Treemacs
 Treemacs is the file tree that shows up at the left of the screen
 #+begin_src emacs-lisp
