@@ -20,3 +20,4 @@ set -x BROWSER /usr/bin/qutebrowser
 
 alias ec 'emacsclient -c -a "emacs"'
 alias g git
+alias d docker
