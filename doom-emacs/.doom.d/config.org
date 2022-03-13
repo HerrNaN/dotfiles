@@ -151,6 +151,7 @@ Config LSP
   (lsp-enable-links nil)
   )
 #+end_src
+*** Terraform
 Add custom Terraform language server
 #+begin_src elisp
 (use-package! lsp-mode
