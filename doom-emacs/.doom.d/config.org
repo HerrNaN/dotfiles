@@ -81,8 +81,10 @@ numbers are disabled. For relative line numbers, set this to `relative'.
 * Packages
 Add external packages
 #+begin_src elisp :tangle packages.el
-(package! feature-mode) ; Cucumber Gherkin files
-(package! gitconfig)    ; Gitconfig
+(package! feature-mode)    ; Cucumber Gherkin files
+(package! gitconfig)       ; Gitconfig
+(package! dockerfile-mode) ; Docker files
+(package! lsp-haskell)     ; Haskell LSP
 #+end_src
 ** Org
 If you use `org' and don't want your org files in the default location below,
