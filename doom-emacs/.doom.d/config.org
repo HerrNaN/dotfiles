@@ -64,6 +64,13 @@ numbers are disabled. For relative line numbers, set this to `relative'.
       #'evil-scroll-up)
 #+end_src
 
+#+begin_src elisp
+(map! :leader
+      :desc "Copy buffer contents"
+      :n "b c"
+      #'doom/copy-buffer-contents)
+#+End_src
+
 * Packages
 Add external packages
 #+begin_src elisp :tangle packages.el
