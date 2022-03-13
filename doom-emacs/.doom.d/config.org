@@ -130,11 +130,25 @@ Format buffer with (SPC c f)
       :desc "Format buffer" :n "c f" #'lsp-format-buffer)
 #+end_src
 
+Config LSP
+#+begin_src elisp
+(use-package! lsp
+  :custom
+  (custom-set lsp-enable-links nil))
+#+end_src
+
 *** Haskell
 #+begin_src elisp
 (use-package! lsp-haskell
   :custom
   (lsp-haskell-formatting-provider "stylish-haskell")
+  )
+#+end_src
+*** Go
+#+begin_src elisp
+(use-package! lsp-go
+  :custom
+  (lsp-enable-links nil)
   )
 #+end_src
 Add custom Terraform language server
