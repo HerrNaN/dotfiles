@@ -71,6 +71,13 @@ numbers are disabled. For relative line numbers, set this to `relative'.
       #'doom/copy-buffer-contents)
 #+End_src
 
+#+begin_src elisp
+(map! :leader
+      :desc "Kill compilation buffer"
+      :n "c K"
+      #'kill-compilation)
+#+end_src
+
 * Packages
 Add external packages
 #+begin_src elisp :tangle packages.el
