@@ -2,9 +2,9 @@
 monitor = ${env:MONITOR:}
 
 width = 100%
-height = 22
+height = 20
 radius = 0
-fixed-center = false
+fixed-center = true
 
 background = #2f2f38
 foreground = #b0c4bb
@@ -28,7 +28,7 @@ font-3 = "Font Awesome 5 Brands:size=10;1"
 
 modules-left = i3
 modules-center = date
-modules-right = bluetooth wlan eth battery powermenu
+modules-right = bluetooth wlan eth battery 
 
 tray-position =
 ;tray-padding =
@@ -95,7 +95,7 @@ exec = $HOME/.config/polybar/scripts/bluetooth.sh
 interval = 2
 click-left = exec blueberry
 click-right = exec $HOME/.config/polybar/scripts/toggle_bluetooth.sh
-format-padding = 1
+format-padding = 0
 format-background = #2f2f38
 format-foreground = #2f2f38
 
@@ -137,15 +137,15 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = %x
-time = %X
+date = %a %d %b
+time = %H:%m
 
 format-prefix = 
 format-foreground = #2f2f38
 format-background = #81a2be
-format-padding = 2
+format-padding = 1
 
-label = " %date% %time%"
+label = " %date% | %time%"
 
 [module/powermenu]
 type = custom/menu
