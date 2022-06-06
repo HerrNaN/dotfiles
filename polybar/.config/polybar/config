@@ -27,8 +27,8 @@ font-2 = "Font Awesome 5 Free:style=Solid:size=10;1"
 font-3 = "Font Awesome 5 Brands:size=10;1"
 
 modules-left = i3
-modules-center =
-modules-right = bluetooth wlan eth date powermenu
+modules-center = date
+modules-right = bluetooth wlan eth battery powermenu
 
 tray-position =
 ;tray-padding =
@@ -66,6 +66,28 @@ label-visible-padding = 1
 label-urgent = %index%
 label-urgent-background = #BA2922
 label-urgent-padding = 2
+
+[module/battery]
+type = internal/battery
+
+# This is useful in case the battery never reports 100% charge
+full-at = 99
+
+# Use the following command to list batteries and adapters:
+# $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = AC
+
+# If an inotify event haven't been reported in this many
+# seconds, manually poll for new values.
+#
+# Needed as a fallback for systems that don't report events
+# on sysfs/procfs.
+#
+# Disable polling by setting the interval to 0.
+#
+# Default: 5
+poll-interval = 5
 
 [module/bluetooth]
 type = custom/script
