@@ -44,24 +44,24 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
-label-mode-padding = 2
+label-mode-padding = 1
 label-mode-foreground = #34343e
 label-mode-background = #2f2f38
 
 label-focused = %index%
-label-focused-background = #688486
+label-focused-background = #81a2be
 label-focused-foreground = #2f2f38
-label-focused-padding = 2
+label-focused-padding = 1
 
 label-unfocused = %index%
-label-unfocused-background = #81a2be
+label-unfocused-background = #688486
 label-unfocused-foreground = #2f2f38
-label-unfocused-padding = 2
+label-unfocused-padding = 1
 
 label-visible = %index%
-label-visible-background = #81a2be
+label-visible-background = #688486
 label-visible-foreground = #2f2f38
-label-visible-padding = 2
+label-visible-padding = 1
 
 label-urgent = %index%
 label-urgent-background = #BA2922
