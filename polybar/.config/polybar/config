@@ -115,18 +115,15 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
-
-time = %H:%M
-time-alt = %H:%M:%S
+date = %x
+time = %X
 
 format-prefix = 
 format-foreground = #2f2f38
 format-background = #81a2be
 format-padding = 2
 
-label = %date% %time%
+label = " %date% %time%"
 
 [module/powermenu]
 type = custom/menu
