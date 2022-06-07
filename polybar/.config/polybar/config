@@ -28,7 +28,7 @@ font-3 = "Font Awesome 5 Brands:size=10;1"
 
 modules-left = i3
 modules-center = date
-modules-right = bluetooth wlan eth battery 
+modules-right = pulseaudio-control bluetooth wlan eth battery
 
 tray-position =
 ;tray-padding =
@@ -71,7 +71,7 @@ label-urgent-padding = 2
 type = internal/battery
 
 # This is useful in case the battery never reports 100% charge
-full-at = 99
+full-at = 95
 
 # Use the following command to list batteries and adapters:
 # $ ls -1 /sys/class/power_supply/
@@ -147,41 +147,23 @@ format-padding = 1
 
 label = " %date% | %time%"
 
-[module/powermenu]
-type = custom/menu
+[module/pulseaudio-control]
+type = custom/script
+tail = true
+format-underline = ${colors.cyan}
+label-padding = 2
+label-foreground = ${colors.foreground}
 
-expand-right = true
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = #81a2be
-label-close =  cancel
-label-close-foreground = #81a2be
-label-separator = |
-label-separator-foreground = #81a2be
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-menu-0-2 = log off
-menu-0-2-exec = menu-open-3
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = reboot
-
-menu-2-0 = power off
-menu-2-0-exec = poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
-menu-3-0 = log off
-menu-3-0-exec = i3 exit logout
-menu-3-1 = cancel
-menu-3-1-exec = menu-open-0
+# Icons mixed from Font Awesome 5 and Material Icons
+# You can copy-paste your options for each possible action, which is more
+# trouble-free but repetitive, or apply only the relevant ones (for example
+# --sink-blacklist is only needed for next-sink).
+exec = pulseaudio-control --icons-volume " , " --icon-muted " " --sink-nicknames-from "device.description" --sink-nickname "alsa_output.pci-0000_00_1b.0.analog-stereo:  Speakers" --sink-nickname "alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo:  Headphones" listen
+click-right = exec pavucontrol &
+click-left = pulseaudio-control togmute
+click-middle = pulseaudio-control --sink-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra2" next-sink
+scroll-up = pulseaudio-control --volume-max 130 up
+scroll-down = pulseaudio-control --volume-max 130 down
 
 [settings]
 screenchange-reload = true
