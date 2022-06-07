@@ -138,7 +138,7 @@ type = internal/date
 interval = 5
 
 date = %a %d %b
-time = %H:%m
+time = %H:%M
 
 format-prefix = 
 format-foreground = #2f2f38
