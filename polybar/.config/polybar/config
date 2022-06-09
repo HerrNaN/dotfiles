@@ -18,8 +18,8 @@ border-color =
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 0
+module-margin-right = 0
 
 font-0 = "NotoSansMono Nerd Font:style=Regular:size=10;1"
 font-1 = "Source Code Pro Semibold:size=10;1"
@@ -72,6 +72,11 @@ type = internal/battery
 
 # This is useful in case the battery never reports 100% charge
 full-at = 95
+label-full =
+format-full =
+
+format-charging = C <label-charging>
+format-discharging = D <label-discharging>
 
 # Use the following command to list batteries and adapters:
 # $ ls -1 /sys/class/power_supply/
@@ -95,7 +100,7 @@ exec = $HOME/.config/polybar/scripts/bluetooth.sh
 interval = 2
 click-left = exec blueberry
 click-right = exec $HOME/.config/polybar/scripts/toggle_bluetooth.sh
-format-padding = 0
+format-padding = 1
 format-background = #2f2f38
 format-foreground = #2f2f38
 
@@ -106,7 +111,7 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-background = #81a2be
-format-connected-padding = 2
+format-connected-padding = 1
 
 label-connected = %essid%
 label-connected-foreground = #000000
@@ -152,7 +157,7 @@ label = " %date% | %time%"
 type = custom/script
 tail = true
 format-underline = ${colors.cyan}
-label-padding = 2
+label-padding = 0
 label-foreground = ${colors.foreground}
 
 # Icons mixed from Font Awesome 5 and Material Icons
