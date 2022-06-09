@@ -21,6 +21,8 @@ bindsym $mod+Shift+q kill
 # start program launcher
 bindsym $mod+space exec --no-startup-id rofi -show drun
 
+focus_wrapping no
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
