@@ -105,10 +105,11 @@ interface-type = wireless
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = #2f2f38
 format-connected-background = #81a2be
 format-connected-padding = 2
+
 label-connected = %essid%
+label-connected-foreground = #000000
 
 format-disconnected =
 
