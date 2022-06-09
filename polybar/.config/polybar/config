@@ -16,10 +16,10 @@ border-size = 0
 border-color =
 
 padding-left = 0
-padding-right = 0
+padding-right = 1
 
 module-margin-left = 0
-module-margin-right = 0
+module-margin-right = 1
 
 font-0 = "NotoSansMono Nerd Font:style=Regular:size=10;1"
 font-1 = "Source Code Pro Semibold:size=10;1"
@@ -100,7 +100,7 @@ exec = $HOME/.config/polybar/scripts/bluetooth.sh
 interval = 2
 click-left = exec blueberry
 click-right = exec $HOME/.config/polybar/scripts/toggle_bluetooth.sh
-format-padding = 1
+format-padding = 0
 format-background = #2f2f38
 format-foreground = #2f2f38
 
