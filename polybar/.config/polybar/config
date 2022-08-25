@@ -92,7 +92,7 @@ adapter = AC
 # Disable polling by setting the interval to 0.
 #
 # Default: 5
-poll-interval = 5
+poll-interval = 30
 
 [module/bluetooth]
 type = custom/script
