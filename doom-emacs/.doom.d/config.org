@@ -82,9 +82,17 @@ numbers are disabled. For relative line numbers, set this to `relative'.
 Add external packages
 #+begin_src elisp :tangle packages.el
 (package! feature-mode)    ; Cucumber Gherkin files
+
 (package! gitconfig)       ; Gitconfig
+
 (package! dockerfile-mode) ; Docker files
+
 (package! lsp-haskell)     ; Haskell LSP
+
+(package! kbd-mode         ; KMonad .kbd files
+  :recipe (:host github
+           :repo "kmonad/kbd-mode"))
+(use-package! kbd-mode)
 #+end_src
 ** Org
 If you use `org' and don't want your org files in the default location below,
