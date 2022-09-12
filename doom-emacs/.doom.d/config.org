@@ -112,7 +112,7 @@ change `org-directory'. It must be set before org loads!
 (use-package! treemacs
   :init
   (setq treemacs-width 45               ; A little bit wider
-        +treemacs-git-mode 'extended)   ; What has changed?
+        +treemacs-git-mode 'extended))  ; What has changed?
 #+end_src
 *** Keybinds
 I would like to be able to access the treemacs window like in Spacemacs
