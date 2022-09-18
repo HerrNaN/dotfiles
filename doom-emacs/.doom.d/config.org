@@ -36,7 +36,7 @@ To try out the options run ~consult-theme~ (SPC h t)
 ** Frame
 Start every frame maximized
 #+begin_src emacs-lisp
-(add-to-list 'initial-frame-alist '(fullscreen . fullboth))
+; (add-to-list 'initial-frame-alist '(fullscreen . fullboth))
 #+end_src
 ** Window
 #+begin_src elisp
