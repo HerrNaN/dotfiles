@@ -28,7 +28,7 @@ font-3 = "Font Awesome 5 Brands:size=10;1"
 
 modules-left = i3
 modules-center = date
-modules-right = pulseaudio-control bluetooth wlan eth battery
+modules-right = updates-pacman-aurhelper pulseaudio-control bluetooth wlan eth battery
 
 tray-position =
 ;tray-padding =
@@ -170,6 +170,11 @@ click-left = pulseaudio-control togmute
 click-middle = pulseaudio-control --sink-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra2" next-sink
 scroll-up = pulseaudio-control --volume-max 130 up
 scroll-down = pulseaudio-control --volume-max 130 down
+
+[module/updates-pacman-aurhelper]
+type = custom/script
+exec = ~/.config/polybar/scripts/updates-pacman-aurhelper.sh
+interval = 600
 
 [settings]
 screenchange-reload = true
