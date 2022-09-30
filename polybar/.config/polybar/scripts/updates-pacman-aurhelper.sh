@@ -5,18 +5,21 @@ if ! updates_arch=$(checkupdates 2> /dev/null | wc -l ); then
 fi
 
 if ! updates_aur=$(yay -Qum 2> /dev/null | wc -l); then
-# if ! updates_aur=$(paru -Qum 2> /dev/null | wc -l); then
-# if ! updates_aur=$(cower -u 2> /dev/null | wc -l); then
-# if ! updates_aur=$(trizen -Su --aur --quiet | wc -l); then
-# if ! updates_aur=$(pikaur -Qua 2> /dev/null | wc -l); then
-# if ! updates_aur=$(rua upgrade --printonly 2> /dev/null | wc -l); then
     updates_aur=0
 fi
 
-updates=$((updates_arch + updates_aur))
+arch_updates_label=""
+if [ "$updates_arch" -gt 0 ]; then
+    arch_updates_label="$updates_arch"
+fi
 
-if [ "$updates" -gt 0 ]; then
-    echo "# $updates"
+aur_updates_label=""
+if [ "$updates_aur" -gt 0 ]; then
+    aur_updates_label="# $updates_aur"
+fi
+
+if [ "$arch_updates_label" ] && [ "$aur_updates_label" ]; then
+    echo "$arch_updates_label $aur_updates_label"
 else
-    echo ""
+    echo "$arch_updates_label$aur_updates_label"
 fi
