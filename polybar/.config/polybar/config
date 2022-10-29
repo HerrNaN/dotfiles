@@ -174,7 +174,7 @@ scroll-down = pulseaudio-control --volume-max 130 down
 [module/updates-pacman-aurhelper]
 type = custom/script
 exec = ~/.config/polybar/scripts/updates-pacman-aurhelper.sh
-interval = 600
+interval = 60
 
 [settings]
 screenchange-reload = true
