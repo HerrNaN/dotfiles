@@ -13,6 +13,12 @@ Show which-key minibuffer faster
 #+begin_src elisp
 (setq which-key-idle-delay 0.5) ;; I need the help, I really do
 #+end_src
+
+Automatically discover projects in proj and work on startup
+#+begin_src elisp
+(setq projectile-project-search-path '("~/proj" ("~/work" . 2)))
+(setq projectile-auto-discover t)
+#+end_src
 ** Mode line
 Show time in modeline
 #+begin_src elisp
