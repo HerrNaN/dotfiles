@@ -16,6 +16,7 @@ Show which-key minibuffer faster
 
 Automatically discover projects in proj and work on startup
 #+begin_src elisp
+(setq projectile-ignored-projects '("~/" "/tmp" "~/.emacs.d/.local/straight/repos/"))
 (setq projectile-project-search-path '("~/proj" ("~/work" . 2)))
 (setq projectile-auto-discover t)
 #+end_src
