@@ -19,6 +19,17 @@ Automatically discover projects in proj and work on startup
 (setq projectile-project-search-path '("~/proj" ("~/work" . 2)))
 (setq projectile-auto-discover t)
 #+end_src
+
+I let format package do formatting
+#+begin_src elisp
+(setq +format-with-lsp nil)
+
+(map! :desc "Format buffer"
+      :leader
+      :n "c f"
+      #'+format/buffer)
+#+end_src
+
 ** Mode line
 Show time in modeline
 #+begin_src elisp
@@ -37,7 +48,7 @@ Show battery percentage in mode line if on a laptop
 Set the default theme.
 To try out the options run ~consult-theme~ (SPC h t)
 #+begin_src emacs-lisp
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-vibrant)
 #+end_src
 ** Frame
 Start every frame maximized
@@ -64,7 +75,7 @@ numbers are disabled. For relative line numbers, set this to `relative'.
       #'comment-line)
 #+end_src
 
-#+begin_src emacs-lisp
+#+begin_srdoomc emacs-lisp
 (map! :desc "Use evil scroll up"
       :n "C-u"
       #'evil-scroll-up)
@@ -109,17 +120,9 @@ With a prefix ARG invokes `projectile-commander' instead of
 Add external packages
 #+begin_src elisp :tangle packages.el
 (package! feature-mode)    ; Cucumber Gherkin files
-
 (package! gitconfig)       ; Gitconfig
-
 (package! dockerfile-mode) ; Docker files
-
 (package! lsp-haskell)     ; Haskell LSP
-
-(package! kbd-mode         ; KMonad .kbd files
-  :recipe (:host github
-           :repo "kmonad/kbd-mode"))
-(use-package! kbd-mode)
 #+end_src
 ** Org
 If you use `org' and don't want your org files in the default location below,
