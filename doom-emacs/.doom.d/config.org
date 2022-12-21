@@ -12,7 +12,11 @@ clients, file templates and snippets.
 Show which-key minibuffer faster
 #+begin_src elisp
 (setq which-key-idle-delay 0.5) ;; I need the help, I really do
+#+end_src
 
+
+Remove excessive prefix for evil-*
+#+begin_src elisp
 (setq which-key-allow-multiple-replacements t)
 (after! which-key
   (pushnew!
