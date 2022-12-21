@@ -31,10 +31,13 @@ Automatically discover projects in proj and work on startup
 
 I let format package do formatting
 #+begin_src elisp
-(setq +format-with-lsp nil)
+(setq! +format-with-lsp nil)
+#+end_src
 
-(map! :desc "Format buffer"
-      :leader
+Format buffer with (SPC c f)
+#+begin_src emacs-lisp
+(map! :leader
+      :desc "Format buffer"
       :n "c f"
       #'+format/buffer)
 #+end_src
@@ -168,11 +171,6 @@ Automatically refresh the status buffer when new changes are saved
   (add-hook 'after-save-hook 'magit-after-save-refresh-status t))
 #+end_src
 ** LSP
-Format buffer with (SPC c f)
-#+begin_src emacs-lisp
-(map! :leader
-      :desc "Format buffer" :n "c f" #'lsp-format-buffer)
-#+end_src
 
 Config LSP
 #+begin_src elisp
