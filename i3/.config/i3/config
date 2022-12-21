@@ -20,7 +20,6 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 bindsym $mod+space exec --no-startup-id rofi -show drun
-bindsym $mod+Return exec konsole
 bindsym $mod+p exec spectacle --region --background --copy-image
 
 focus_wrapping no
