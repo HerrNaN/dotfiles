@@ -12,6 +12,14 @@ clients, file templates and snippets.
 Show which-key minibuffer faster
 #+begin_src elisp
 (setq which-key-idle-delay 0.5) ;; I need the help, I really do
+
+(setq which-key-allow-multiple-replacements t)
+(after! which-key
+  (pushnew!
+   which-key-replacement-alist
+   '(("" . "\\`+?evil[-:]?\\(?:a-\\)?\\(.*\\)") . (nil . "◂\\1"))
+   '(("\\`g s" . "\\`evilem--?motion-\\(.*\\)") . (nil . "◃\\1"))
+   ))
 #+end_src
 
 Automatically discover projects in proj and work on startup
