@@ -38,7 +38,7 @@
        (emoji +unicode)    ; 🙂
        hl-todo             ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        ;;hydra
-       ;;indent-guides       ; highlighted indent columns
+       ;;indent-guides     ; highlighted indent columns
        ;;ligatures         ; ligatures and symbols to make your code pretty again
        minimap             ; show a map of the code on the side
        modeline            ; snazzy, Atom-inspired modeline, plus API
@@ -75,10 +75,10 @@
 
        :emacs
        (dired
-        +icons)               ; making dired pretty [functional]
+        +icons)            ; making dired pretty [functional]
        electric            ; smarter, keyword-based electric-indent
        (ibuffer
-        +icons)             ; interactive buffer management
+        +icons)            ; interactive buffer management
        undo                ; persistent, smarter undo for your inevitable mistakes
        vc                  ; version-control and Emacs, sitting in a tree
 
@@ -142,14 +142,18 @@
        ;;fsharp            ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        ;;gdscript          ; the language you waited for
-       (go +lsp)           ; the hipster dialect
-       ;; gitconfig
-       (haskell +lsp)      ; a language that's lazier than I am
+       (go                 ; the hipster dialect
+        +lsp)
+       ;;gitconfig
+       (haskell            ; a language that's lazier than I am
+        +lsp)
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ; a language you can depend on
        json                ; At least it ain't XML
        ;;(java +meghanada) ; the poster child for carpal tunnel syndrome
-       (javascript +lsp +tree-sitter) ; all(hope(abandon(ye(who(enter(here))))))
+       (javascript         ; all(hope(abandon(ye(who(enter(here))))))
+        +lsp
+        +tree-sitter)
        ;;julia             ; a better, faster MATLAB
        (kotlin +lsp)       ; a better, slicker Java(Script)
        ;;latex             ; writing papers in Emacs has never been so fun
@@ -160,16 +164,18 @@
        nim                 ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
-       org                 ; organize your plain life in plain text
+       (org                ; organize your plain life in plain text
+        +pretty)           ; ...and make it pretty
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
-       (python +lsp)            ; beautiful is better than ugly
+       (python             ; beautiful is better than ugly
+        +lsp)
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;raku              ; the artist formerly known as perl6
        (rest               ; Emacs as a REST client
-        +jq)               ; ...with native support for reading and processing REST responses
+        +jq)               ; ...with native support for reading and processing JSON responses
        ;;rst               ; ReST in peace
        ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        rust                ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
@@ -180,7 +186,8 @@
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
-       (web +lsp)               ; the tubes
+       (web                ; the tubes
+        +lsp)
        yaml                ; JSON, but readable
        ;;zig               ; C, but simpler
 
