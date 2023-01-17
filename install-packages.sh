@@ -5,7 +5,7 @@
 # my system and is expecting you to run an Arch-based distro
 # =====================================
 
-# We only want the needed commands to be run with priviliges
+# We only want to run certain commands to be run with priviliges
 if [ $USER = "root" ]; then
     echo "Don't run this script as root! When permission are needed you'll be prompted"
     exit 1
