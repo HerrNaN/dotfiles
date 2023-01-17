@@ -25,3 +25,5 @@
 	s = status --short
 	l = log --oneline
 	r = rebase
+[github]
+	user = HerrNaN
