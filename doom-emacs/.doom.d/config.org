@@ -17,8 +17,8 @@ Show which-key minibuffer faster
 
 Remove excessive prefix for evil-*
 #+begin_src elisp
-(setq which-key-allow-multiple-replacements t)
 (after! which-key
+  (setq which-key-allow-multiple-replacements t)
   (pushnew!
    which-key-replacement-alist
    '(("" . "\\`+?evil[-:]?\\(?:a-\\)?\\(.*\\)") . (nil . "◂\\1"))
