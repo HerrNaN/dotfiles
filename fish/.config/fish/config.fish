@@ -21,3 +21,9 @@ set -x BROWSER /usr/bin/qutebrowser
 alias ec 'emacsclient -c -a "emacs"'
 alias g git
 alias d docker
+
+if test $INSIDE_EMACS
+    fish_default_key_bindings
+else
+    fish_vi_key_bindings
+end
