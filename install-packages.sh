@@ -15,7 +15,7 @@ if [ -z $(which pacman) ]; then
     echo "Error: pacman not found"
     echo "exiting..."
     exit 1
-
+fi
 
 # =====================================
 # Symlink the package lists and config
