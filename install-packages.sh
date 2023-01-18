@@ -44,6 +44,13 @@ fi
 echo "> Linking files > Linking /etc/pacman.conf"
 sudo ln -s $(pwd)/pacman.conf /etc/pacman.conf
 
+if [ -e /etc/pacman.d/hook/package-list.hook ]; then
+    echo "> Linking files > Backing up /etc/pacman.conf"
+    sudo mv /etc/pacman.d/hook/package-list.hook /etc/pacman.d/hook/package-list.hook.backup
+fi
+echo "> Linking files > Linking /etc/pacman.d/hooks/package-list.hook"
+sudo ln -s $(pwd)/package-list.hook /etc/pacman.d/hook/package-list.hook
+
 
 # =====================================
 # Install the listed packages
