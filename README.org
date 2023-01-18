@@ -1,4 +1,4 @@
-#+TITLE: Dotfiles README
+#+TITLE: README
 
 * Introduction
 This repository hosts the dotfiles (among other things) that I use to configure my system the way *I* like it.
