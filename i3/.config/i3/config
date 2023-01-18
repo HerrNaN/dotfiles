@@ -1,7 +1,7 @@
 set $mod Mod1
 
-default_border pixel 1
-default_floating_border normal
+default_border none
+default_floating_border none
 
 hide_edge_borders none
 
