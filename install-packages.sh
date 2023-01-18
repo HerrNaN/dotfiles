@@ -44,12 +44,13 @@ fi
 echo "> Linking files > Linking /etc/pacman.conf"
 sudo ln -s $(pwd)/pacman.conf /etc/pacman.conf
 
-if [ -e /etc/pacman.d/hook/package-list.hook ]; then
+if [ -e /etc/pacman.d/hooks/package-list.hook ]; then
     echo "> Linking files > Backing up /etc/pacman.conf"
-    sudo mv /etc/pacman.d/hook/package-list.hook /etc/pacman.d/hook/package-list.hook.backup
+    sudo mv /etc/pacman.d/hooks/package-list.hook /etc/pacman.d/hooks/package-list.hook.backup
 fi
 echo "> Linking files > Linking /etc/pacman.d/hooks/package-list.hook"
-sudo ln -s $(pwd)/package-list.hook /etc/pacman.d/hook/package-list.hook
+sudo mkdir /etc/pacman.d/hooks
+sudo ln -s $(pwd)/package-list.hook /etc/pacman.d/hooks/package-list.hook
 
 
 # =====================================
@@ -76,7 +77,6 @@ if [ -e foreignpkglist.txt ]; then
         exit 1
     fi
 
-    echo "> Installing AUR packages"
     yay -S --needed - < /etc/foreignpkglist.txt
 else
     echo "no AUR packages to install"

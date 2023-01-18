@@ -11,8 +11,6 @@ icu69
 jetbrains-toolbox
 kazam
 kmonad-bin
-manjaro-documentation-en
-manjaro-firmware
 pulseaudio-control
 qt5-webengine-widevine
 qutebrowser-profile-git
