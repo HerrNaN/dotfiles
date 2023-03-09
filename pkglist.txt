@@ -62,9 +62,10 @@ dvd+rw-tools
 e2fsprogs
 ecryptfs-utils
 efibootmgr
-emacs
+emacs-nativecomp
 emovix
 evtest
+exa
 exfat-utils
 f2fs-tools
 fakeroot
@@ -87,6 +88,7 @@ gcc-libs
 gettext
 gimp
 git-delta
+gitui
 glibc
 glibc-locales
 gnome-keyring
@@ -117,8 +119,8 @@ haveged
 helm
 htop
 i3-default-artwork
-i3-gaps
 i3-help
+i3-wm
 i3exit
 i3status-manjaro
 illyria-wallpaper
@@ -275,6 +277,8 @@ patch
 pciutils
 perl
 perl-file-mimeinfo
+pgadmin4
+pgcli
 phonon-qt5-gstreamer
 picocom
 picom
@@ -305,6 +309,7 @@ python-pyqt5
 python-pysmbc
 python-reportlab
 qbittorrent
+qemu-base
 qt5-imageformats
 qt5-virtualkeyboard
 qutebrowser
@@ -312,6 +317,7 @@ reiserfsprogs
 ripgrep
 rsync
 ruby
+rust-analyzer
 rustup
 s-nail
 samba

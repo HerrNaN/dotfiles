@@ -1,4 +1,5 @@
 act
+aws-session-manager-plugin
 bitwarden-rofi
 bluez-utils-compat
 brainfuck
@@ -14,4 +15,6 @@ kmonad-bin
 pulseaudio-control
 qt5-webengine-widevine
 qutebrowser-profile-git
+terraform-ls
 visual-studio-code-bin
+wiki-tui
