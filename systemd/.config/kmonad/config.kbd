@@ -1,12 +1,9 @@
 ;; Input/Output definitions
 (defcfg
   input  (device-file "/dev/input/event20")
-  output (uinput-sink "My KMonad output"
-    ;; To understand the importance of the following line, see the section on
-    ;; Compose-key sequences at the near-bottom of this file.
-    "/bin/sleep 1 && /bin/setxkbmap -option compose:ralt")
+  output (uinput-sink "My KMonad output")
 
-  cmp-seq ralt    ;; Set the compose key to `RightAlt'
+  ;; cmp-seq ralt    ;; Set the compose key to `RightAlt'
   ;; cmp-seq-delay 5 ;; 5ms delay between each compose-key sequence press
 
   fallthrough true
@@ -20,7 +17,7 @@
   tab       q    w    e    r    t    y    u    i    o    p    [    ]    ret
   caps      a    s    d    f    g    h    j    k    l    ;    '    \
   lsft 102d z    x    c    v    b    n    m    ,    .    /         rsft
-  lctl lmet lalt           spc                      ralt cmp       rctl
+  lctl lmet lalt           spc                      ralt           rctl
 )
 
 #| Layer template
@@ -41,7 +38,7 @@
   tab       q    w    e    r    t    y    u    i    o    p    [    ]    ret
   caps      a    s    d    f    g    h    j    k    l    ;    '    \
   lsft 102d z    x    c    v    b    n    m    ,    .    /        rsft
-  lctl lmet lalt    (tap-hold 250 spc @lsn)         ralt cmp      rctl
+  lctl lmet lalt    (tap-hold 250 spc @lsn)         ralt          rctl
 )
 
 (defalias
@@ -54,5 +51,5 @@
   _         _    _    _    _    _    _    _    _    _    _    _    _    _
   _         _    _    _    _    _    [    \(   \)   ]    _    _    _
   _    _    1    2    3    4    5    6    7    8    9    0         _
-  _    _    _              _                             _    _    _
+  _    _    _              _                             _         _
 )
