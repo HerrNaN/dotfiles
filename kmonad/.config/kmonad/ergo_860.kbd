@@ -46,15 +46,15 @@
   lxx (layer-toggle nop)
 
   ;; Home row mods
-  s_f (tap-hold 200 f lsft)
-  c_d (tap-hold 200 d lctl)
-  a_s (tap-hold 200 s lalt)
-  m_a (tap-hold 200 a lmet)
+  s_f (tap-hold-next-release 250 f lsft)
+  c_d (tap-hold-next-release 250 d lctl)
+  a_s (tap-hold-next-release 250 s lalt)
+  m_a (tap-hold-next-release 400 a lmet)
 
-  s_j (tap-hold 200 j lsft)
-  c_k (tap-hold 200 k lctl)
-  a_l (tap-hold 200 l lalt)
-  m_; (tap-hold 200 ; lmet)
+  s_j (tap-hold-next-release 250 j lsft)
+  c_k (tap-hold-next-release 250 k lctl)
+  a_l (tap-hold-next-release 250 l lalt)
+  m_; (tap-hold-next-release 400 ; lmet)
 )
 
 (deflayer numbers
