@@ -1,6 +1,6 @@
 ;; Input/Output definitions
 (defcfg
-  input  (device-file "/dev/input/event20")
+  input (device-file "")
   output (uinput-sink "My KMonad output")
 
   ;; cmp-seq ralt    ;; Set the compose key to `RightAlt'
@@ -36,13 +36,25 @@
   esc
   grv       1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab       q    w    e    r    t    y    u    i    o    p    [    ]    ret
-  caps      a    s    d    f    g    h    j    k    l    ;    '    \
-  lsft 102d z    x    c    v    b    n    m    ,    .    /        rsft
-  lctl lmet lalt    (tap-hold 250 spc @lsn)         ralt          rctl
+  caps      @m_a @a_s @c_d @s_f g    h    @s_j @c_k @a_l @m_; '    \
+  @lxx 102d z    x    c    v    b    n    m    ,    .    /         @lxx
+  @lxx @lxx @lxx     (tap-hold 250 spc @lsn)        ralt           @lxx
 )
 
 (defalias
   lsn (layer-toggle numbers)
+  lxx (layer-toggle nop)
+
+  ;; Home row mods
+  s_f (tap-hold 200 f lsft)
+  c_d (tap-hold 200 d lctl)
+  a_s (tap-hold 200 s lalt)
+  m_a (tap-hold 200 a lmet)
+
+  s_j (tap-hold 200 j lsft)
+  c_k (tap-hold 200 k lctl)
+  a_l (tap-hold 200 l lalt)
+  m_; (tap-hold 200 ; lmet)
 )
 
 (deflayer numbers
@@ -52,4 +64,13 @@
   _         _    _    _    _    _    [    \(   \)   ]    _    _    _
   _    _    1    2    3    4    5    6    7    8    9    0         _
   _    _    _              _                             _         _
+)
+
+(deflayer nop
+  XX
+  XX        XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX        XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX        XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX   XX   XX    XX    XX    XX    XX    XX    XX    XX    XX    XX          XX
+  XX   XX   XX                XX                            XX                XX
 )

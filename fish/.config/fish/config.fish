@@ -36,8 +36,7 @@ alias g git
 set kbd_ergo_860 /dev/input/(grep -B 1 -A 9 "ERGO 860B Keyboard" /proc/bus/input/devices | grep -o -E 'event[0-9]+')
 # Since KMonad cannot read this variable we need to insert it into the
 # config directyly.
-sed -i -E (printf 's|/dev/input/event[0-9]+|%s|' $kbd_ergo_860) $HOME/.config/kmonad/config.kbd
-sed -i (printf 's|<insert_kbd_input_device_here>|%s|' $kbd_ergo_860) $HOME/.config/kmonad/config.kbd
+sed -i -E (printf 's|input\s+\(device-file "[^"]*"\)|input (device-file "%s")|' $kbd_ergo_860) $HOME/.config/kmonad/ergo_860.kbd | head
 
 
 # When using a terminal from within emacs I already have vi(m)
