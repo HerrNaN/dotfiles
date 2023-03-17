@@ -4,7 +4,7 @@ Description=kmonad keyboard config for the Logitech Ergo 860 bluetooth keyboard
 [Service]
 Restart=always
 RestartSec=3
-ExecStart=/usr/bin/kmonad %h/.config/kmonad/ergo_860.kbd
+ExecStart=%h/.config/kmonad/kmonad.sh ergo_860
 Nice=-20
 
 [Install]

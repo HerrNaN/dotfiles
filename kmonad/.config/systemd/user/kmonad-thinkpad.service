@@ -4,7 +4,7 @@ Description=kmonad keyboard config for the onboard thinkpad X1 Carbon keyboard
 [Service]
 Restart=always
 RestartSec=3
-ExecStart=/usr/bin/kmonad %h/.config/kmonad/thinkpad.kbd
+ExecStart=%h/.config/kmonad/kmonad.sh thinkpad
 Nice=-20
 
 [Install]
