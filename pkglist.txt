@@ -82,6 +82,7 @@ fish
 flex
 fprintd
 fwupd
+fzf
 gawk
 gcc
 gcc-libs
