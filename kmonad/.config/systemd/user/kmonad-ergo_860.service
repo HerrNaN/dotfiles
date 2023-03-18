@@ -1,5 +1,5 @@
 [Unit]
-Description=kmonad keyboard config for the Logitech Ergo 860 bluetooth keyboard
+Description=kmonad for Logitech Ergo 860
 
 [Service]
 Restart=always
