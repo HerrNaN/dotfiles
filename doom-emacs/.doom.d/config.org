@@ -14,7 +14,6 @@ Show which-key minibuffer faster
 (setq which-key-idle-delay 0.5) ;; I need the help, I really do
 #+end_src
 
-
 Remove excessive prefix for evil-*
 #+begin_src elisp
 (after! which-key
@@ -71,7 +70,11 @@ Start every frame maximized
 #+begin_src emacs-lisp
 ; (add-to-list 'initial-frame-alist '(fullscreen . fullboth))
 #+end_src
+This is not needed (or wanted) when I run i3 since the window automatically
+takes up as much space as I want.
 ** Window
+When splitting the window I want to be able to pick from the other open buffers which should be
+shown in the new window.
 #+begin_src elisp
 (defadvice! prompt-for-buffer (&rest _)
   :after '(evil-window-split evil-window-vsplit)
@@ -111,6 +114,8 @@ numbers are disabled. For relative line numbers, set this to `relative'.
       #'kill-compilation)
 #+end_src
 
+Normally when opening a project I want to see the magit buffer of said project to get an overview of
+where I am in the development process.
 #+begin_src elisp
 (defun open-project-git (&optional arg)
   "Switch to a project we have visited before.
@@ -140,6 +145,7 @@ Add external packages
 (package! dockerfile-mode) ; Docker files
 (package! lsp-haskell)     ; Haskell LSP
 #+end_src
+
 ** Org
 If you use `org' and don't want your org files in the default location below,
 change `org-directory'. It must be set before org loads!
@@ -175,7 +181,6 @@ Automatically refresh the status buffer when new changes are saved
   (add-hook 'after-save-hook 'magit-after-save-refresh-status t))
 #+end_src
 ** LSP
-
 Config LSP
 #+begin_src elisp
 (use-package! lsp
