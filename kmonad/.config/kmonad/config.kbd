@@ -1,6 +1,6 @@
 ;; Input/Output definitions
 (defcfg
-  input (device-file "")
+  input (device-file "/dev/input/event21")
   output (uinput-sink "My KMonad output")
 
   ;; cmp-seq ralt    ;; Set the compose key to `RightAlt'
