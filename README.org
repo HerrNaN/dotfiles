@@ -2,7 +2,7 @@
 
 * Introduction
 This repository hosts the dotfiles (among other things) that I use to configure my system the way *I* like it.
-Feel free to use it or fork it!
+Feel free to use or fork it!
 ** Dotfiles
 The dotfiles are setup using [[https://www.gnu.org/software/stow/][GNU Stow]], a utility that lets you symlink config files from this repo into your system.
 ** System setup
