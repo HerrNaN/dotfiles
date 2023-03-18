@@ -31,14 +31,6 @@ alias d docker
 alias ec 'emacsclient -n -a -c "emacs"'
 alias g git
 
-# Bluetooth devices get a new input device every time they are connected.
-# This finds the input device for the "ERGO 860B Keyboard".
-set kbd_ergo_860 /dev/input/(grep -B 1 -A 9 "ERGO 860B Keyboard" /proc/bus/input/devices | grep -o -E 'event[0-9]+')
-# Since KMonad cannot read this variable we need to insert it into the
-# config directyly.
-sed -i -E (printf 's|input\s+\(device-file "[^"]*"\)|input (device-file "%s")|' $kbd_ergo_860) $HOME/.config/kmonad/ergo_860.kbd | head
-
-
 # When using a terminal from within emacs I already have vi(m)
 # bindings. Let's not have 2 layers of them.
 #
