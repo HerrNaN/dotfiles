@@ -34,17 +34,19 @@
 ;; Base layer
 (deflayer qwerty
   esc
-  grv       _    _    _    _    _    _    _    _    _    _    -    =    bspc
+  _         _    _    _    _    _    _    _    _    _    _    _    _    bspc
   tab       q    w    e    r    t    y    u    i    o    p    _    _    ret
-  caps      @m_a @a_s @c_d @s_f g    h    @s_j @c_k @a_l @m_; '    \
+  caps      @m_a @a_s @c_d @s_f g    h    @s_j @c_k @a_l @m_; _    _
   _    102d z    x    c    v    b    n    m    ,    .    /         _
   _    _    _        (tap-hold 250 spc @lsn)        ralt           _
 )
 
 (defalias
   lsn (layer-toggle numbers)
+)
 
-  ;; Home row mods
+;; Home row mods
+(defalias
   s_f (tap-hold-next-release 250 f lsft)
   c_d (tap-hold-next-release 250 d lctl)
   a_s (tap-hold-next-release 250 s lalt)
