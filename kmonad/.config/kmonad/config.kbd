@@ -33,10 +33,10 @@
 
 ;; Base layer
 (deflayer qwerty
-  esc
+  caps
   _         _    _    _    _    _    _    _    _    _    _    _    _    bspc
   tab       q    w    e    r    t    y    u    i    o    p    _    _    ret
-  caps      @m_a @a_s @c_d @s_f g    h    @s_j @c_k @a_l @m_; _    _
+  esc       @m_a @a_s @c_d @s_f g    h    @s_j @c_k @a_l @m_; _    _
   _    102d z    x    c    v    b    n    m    ,    .    /         _
   _    _    _        (tap-hold 250 spc @lsn)        ralt           _
 )
