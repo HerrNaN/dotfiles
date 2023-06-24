@@ -6,7 +6,7 @@
   ;; cmp-seq ralt    ;; Set the compose key to `RightAlt'
   ;; cmp-seq-delay 5 ;; 5ms delay between each compose-key sequence press
 
-  fallthrough false
+  fallthrough true
   allow-cmd false
 )
 
