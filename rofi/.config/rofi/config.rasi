@@ -1,0 +1,20 @@
+@import "themes/nord.rasi"
+
+configuration {
+      // Unbind Control+k
+      kb-remove-to-eol: ""; 
+      kb-accept-entry: "Control+m,Return,KP_Enter";
+
+      kb-row-up: "Control+k,Up";
+      kb-row-down: "Control+j,Down";
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+//@theme "/usr/share/rofi/themes/gruvbox-light.rasi"
+@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
