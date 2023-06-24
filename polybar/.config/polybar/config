@@ -6,8 +6,8 @@ height = 20
 radius = 0
 fixed-center = true
 
-background = #2f2f38
-foreground = #b0c4bb
+background = #32302f
+foreground = #d5c4a1
 
 line-size = 3
 line-color =
@@ -43,26 +43,26 @@ index-sort = true
 wrapping-scroll = false
 
 label-mode-padding = 1
-label-mode-foreground = #34343e
-label-mode-background = #2f2f38
+label-mode-background = #665c54
+label-mode-foreground = #eddbb2
 
 label-focused = %index%
-label-focused-background = #81a2be
-label-focused-foreground = #2f2f38
+label-focused-background = #665c54
+label-focused-foreground = #eddbb2
 label-focused-padding = 1
 
 label-unfocused = %index%
-label-unfocused-background = #688486
-label-unfocused-foreground = #2f2f38
+label-unfocused-background = #665c54
+label-unfocused-foreground = #eddbb2
 label-unfocused-padding = 1
 
 label-visible = %index%
-label-visible-background = #688486
-label-visible-foreground = #2f2f38
+label-visible-background = #7c6f64
+label-visible-foreground = #eddbb2
 label-visible-padding = 1
 
 label-urgent = %index%
-label-urgent-background = #BA2922
+label-urgent-background = #cc241d
 label-urgent-padding = 2
 
 [module/battery]
@@ -99,8 +99,8 @@ interval = 2
 click-left = exec blueberry
 click-right = exec $HOME/.config/polybar/scripts/toggle_bluetooth.sh
 format-padding = 0
-format-background = #2f2f38
-format-foreground = #2f2f38
+format-background = #32302f
+format-foreground = #32302f
 
 [module/wlan]
 type = internal/network
@@ -108,11 +108,11 @@ interface-type = wireless
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-background = #81a2be
+format-connected-background = #665c54
 format-connected-padding = 1
 
 label-connected = %essid%
-label-connected-foreground = #000000
+label-connected-foreground = #eddbb2
 
 format-disconnected =
 
@@ -121,7 +121,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = #2f2f38
+ramp-signal-foreground = #eddbb2
 
 [module/eth]
 type = internal/network
@@ -129,10 +129,10 @@ interface-type = wired
 interval = 3.0
 
 format-connected-padding = 2
-format-connected-foreground = #2f2f38
-format-connected-background = #81a2be
+format-connected-foreground = #eddbb2
+format-connected-background = #665c54
 format-connected-prefix = " "
-format-connected-prefix-foreground = #2f2f38
+format-connected-prefix-foreground = #eddbb2
 label-connected = %local_ip%
 
 format-disconnected =
@@ -145,8 +145,8 @@ date = %a %d %b
 time = %H:%M
 
 format-prefix = 
-format-foreground = #2f2f38
-format-background = #81a2be
+format-foreground = #eddbb2
+format-background = #665c54
 format-padding = 1
 
 label = " %date% | %time%"
@@ -154,9 +154,9 @@ label = " %date% | %time%"
 [module/pulseaudio-control]
 type = custom/script
 tail = true
-format-underline = ${colors.cyan}
+# format-underline = ${colors.cyan}
 label-padding = 0
-label-foreground = ${colors.foreground}
+# label-foreground = ${colors.foreground}
 
 # Icons mixed from Font Awesome 5 and Material Icons
 # You can copy-paste your options for each possible action, which is more

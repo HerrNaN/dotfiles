@@ -63,7 +63,7 @@ Show battery percentage in mode line if on a laptop
 Set the default theme.
 To try out the options run ~consult-theme~ (SPC h t)
 #+begin_src emacs-lisp
-(setq doom-theme 'doom-vibrant)
+(setq doom-theme 'doom-gruvbox)
 #+end_src
 ** Frame
 Start every frame maximized
