@@ -47,7 +47,7 @@ label-mode-background = #665c54
 label-mode-foreground = #eddbb2
 
 label-focused = %index%
-label-focused-background = #665c54
+label-focused-background = #7c6f64
 label-focused-foreground = #eddbb2
 label-focused-padding = 1
 
@@ -57,7 +57,7 @@ label-unfocused-foreground = #eddbb2
 label-unfocused-padding = 1
 
 label-visible = %index%
-label-visible-background = #7c6f64
+label-visible-background = #665c54
 label-visible-foreground = #eddbb2
 label-visible-padding = 1
 
