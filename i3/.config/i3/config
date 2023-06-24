@@ -86,17 +86,20 @@ set $ws7 7
 set $ws8 8
 set $ws9 9
 
+set $laptop eDP1
+set $external DP2
+
 # place workspaces on select screens for easier transitions
 # between single and multi monitor setups
-workspace $ws1 output eDP1 primary
-workspace $ws2 output primary
-workspace $ws3 output primary
-workspace $ws4 output primary
-workspace $ws5 output primary
-workspace $ws6 output primary
-workspace $ws7 output primary
-workspace $ws8 output primary
-workspace $ws9 output primary
+workspace $ws1 output $laptop primary
+workspace $ws2 output primary $external
+workspace $ws3 output primary $external
+workspace $ws4 output primary $external
+workspace $ws5 output primary $external
+workspace $ws6 output primary $external
+workspace $ws7 output primary $external
+workspace $ws8 output primary $external
+workspace $ws9 output primary $external
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
