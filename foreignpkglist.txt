@@ -1,6 +1,5 @@
 act
 aws-session-manager-plugin
-bitwarden-rofi
 bluez-utils-compat
 brainfuck
 browsh-bin
@@ -12,9 +11,12 @@ icu69
 jetbrains-toolbox
 kazam
 kmonad-bin
+microsoft-edge-stable-bin
 pulseaudio-control
 qt5-webengine-widevine
 qutebrowser-profile-git
+simplescreenrecorder
+systemd-fsck-silent
 terraform-ls
 visual-studio-code-bin
 wiki-tui

@@ -26,7 +26,6 @@ bat
 binutils
 bison
 bitwarden
-bitwarden-cli
 blueberry
 bluedevil
 bspwm
@@ -195,6 +194,7 @@ libva-intel-driver
 libva-mesa-driver
 libva-vdpau-driver
 licenses
+light
 linux510
 linux515
 linux515-headers
@@ -250,12 +250,14 @@ networkmanager-vpnc
 nfs-utils
 nitrogen
 nmap
+nodejs
 noto-fonts
 noto-fonts-emoji
 nss-mdns
 ntfs-3g
 ntp
 numlockx
+nyxt
 okular
 openjdk-doc
 openjdk-src
@@ -304,8 +306,10 @@ pulseaudio-bluetooth
 pulseaudio-ctl
 pulseaudio-zeroconf
 python-adblock
+python-lsp-black
 python-pillow
 python-pip
+python-pipx
 python-pyqt5
 python-pysmbc
 python-reportlab
@@ -318,7 +322,6 @@ reiserfsprogs
 ripgrep
 rsync
 ruby
-rust-analyzer
 rustup
 s-nail
 samba
@@ -329,7 +332,6 @@ sddm-kcm
 seahorse
 sed
 shadow
-simplescreenrecorder
 skanlite
 snapd
 snapd-glib
@@ -343,7 +345,6 @@ sxhkd
 sysfsutils
 system-config-printer
 systemd
-systemd-fsck-silent
 systemd-kcm
 systemd-sysvcompat
 systemsettings
@@ -362,7 +363,7 @@ ttf-font-awesome
 ttf-inconsolata
 ttf-indic-otf
 ttf-liberation
-ttf-nerd-fonts-symbols-2048-em
+ttf-nerd-fonts-symbols
 udiskie
 udisks2
 unarchiver
@@ -372,6 +373,7 @@ usbutils
 util-linux
 vcdimager
 vi
+vidcutter
 vim
 vimb
 virtualbox
