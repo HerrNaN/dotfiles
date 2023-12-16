@@ -1,5 +1,3 @@
-@import "themes/nord.rasi"
-
 configuration {
       // Unbind Control+k
       kb-remove-to-eol: ""; 
