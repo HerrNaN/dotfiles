@@ -10,16 +10,14 @@ background = #32302f
 foreground = #d5c4a1
 
 line-size = 3
-line-color =
 
 border-size = 0
-border-color =
 
 padding-left = 0
-padding-right = 1
+padding-right = 0
 
 module-margin-left = 0
-module-margin-right = 1
+module-margin-right = 0
 
 font-0 = "Noto Sans Mono:style=Regular:size=10;1"
 font-1 = "FontAwesome:style=Regular:size=10;1"
@@ -28,10 +26,7 @@ modules-left = i3
 modules-center = date
 modules-right = updates-pacman-aurhelper pulseaudio-control bluetooth wlan eth battery
 
-tray-position =
-;tray-padding =
 wm-restack = i3
-#override-redirect = true
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -98,7 +93,7 @@ exec = $HOME/.config/polybar/scripts/bluetooth.sh
 interval = 2
 click-left = exec blueberry
 click-right = exec $HOME/.config/polybar/scripts/toggle_bluetooth.sh
-format-padding = 0
+format-padding = 1
 format-background = #32302f
 format-foreground = #32302f
 
@@ -173,6 +168,7 @@ scroll-down = pulseaudio-control --volume-max 130 down
 type = custom/script
 exec = ~/.config/polybar/scripts/updates-pacman-aurhelper.sh
 interval = 60
+label-padding = 1
 
 [settings]
 screenchange-reload = true
