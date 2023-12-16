@@ -37,7 +37,9 @@ cdrdao
 chromium
 cmake
 conky-i3
+copr-cli
 coreutils
+cosign
 cpupower
 cronie
 cryptsetup
@@ -47,6 +49,7 @@ dhclient
 dhcpcd
 diffpdf
 diffutils
+distrobox
 dmenu-manjaro
 dmidecode
 dmraid
@@ -61,11 +64,10 @@ dvd+rw-tools
 e2fsprogs
 ecryptfs-utils
 efibootmgr
-emacs-nativecomp
 emovix
 evtest
-exa
 exfat-utils
+eza
 f2fs-tools
 fakeroot
 fd
@@ -155,7 +157,8 @@ kgamma5
 kget
 khelpcenter
 khotkeys
-kimageformats
+kicad
+kimageformats5
 kinfocenter
 kio-extras
 klavaro
@@ -280,7 +283,6 @@ patch
 pciutils
 perl
 perl-file-mimeinfo
-pgadmin4
 pgcli
 phonon-qt5-gstreamer
 picocom
@@ -305,6 +307,7 @@ psmisc
 pulseaudio-bluetooth
 pulseaudio-ctl
 pulseaudio-zeroconf
+pwgen
 python-adblock
 python-lsp-black
 python-pillow
@@ -356,7 +359,6 @@ thunderbird
 timeshift
 tlp
 traceroute
-transcode
 ttf-dejavu
 ttf-droid
 ttf-font-awesome
