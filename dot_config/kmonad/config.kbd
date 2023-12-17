@@ -1,0 +1,73 @@
+;; Input/Output definitions
+(defcfg
+  input (device-file "$KBD_DEV")
+  output (uinput-sink "My KMonad output")
+
+  ;; cmp-seq ralt    ;; Set the compose key to `RightAlt'
+  ;; cmp-seq-delay 5 ;; 5ms delay between each compose-key sequence press
+
+  fallthrough true
+  allow-cmd false
+)
+
+;; Source mapping
+(defsrc
+  esc
+  grv       1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab       q    w    e    r    t    y    u    i    o    p    [    ]    ret
+  caps      a    s    d    f    g    h    j    k    l    ;    '    \
+  lsft 102d z    x    c    v    b    n    m    ,    .    /         rsft
+  lctl lmet lalt           spc                      ralt           rctl
+)
+
+#| Layer template
+# (deflayer numbers
+#   _
+#   _    _    _    _    _    _    _    _    _    _    _    _    _    _
+#   _    _    _    _    _    _    _    _    _    _    _    _    _    _
+#   _    _    _    _    _    _    _    _    _    _    _    _    _
+#   _    _    _    _    _    _    _    _    _    _    _    _
+#   _    _    _              _              _    _    _    _
+# )
+|#
+
+;; Base layer
+(deflayer qwerty
+  caps
+  _         _    _    _    _    _    _    _    _    _    _    _    _    bspc
+  tab       q    w    e    r    t    y    u    i    o    p    _    _    ret
+  esc       @m_a @a_s @c_d @s_f g    h    @s_j @c_k @a_l @m_; _    _
+  _    102d z    x    c    v    b    n    m    ,    .    /         _
+  _    _    _        (tap-hold 250 spc @lsn)        ralt           _
+)
+
+(defalias
+  lsn (layer-toggle numbers)
+)
+
+;; Home row mods
+(defalias
+  s_f (tap-hold-next-release 250 f lsft)
+  c_d (tap-hold-next-release 250 d lctl)
+  a_s (tap-hold-next-release 250 s lalt)
+  m_a (tap-hold-next-release 400 a lmet)
+
+  s_j (tap-hold-next-release 250 j lsft)
+  c_k (tap-hold-next-release 250 k lctl)
+  a_l (tap-hold-next-release 250 l lalt)
+  m_; (tap-hold-next-release 400 ; lmet)
+
+  s_6 (tap-hold-next-release 250 6 lsft)
+  c_5 (tap-hold-next-release 250 5 lctl)
+  a_4 (tap-hold-next-release 250 4 lalt)
+  m_' (tap-hold-next-release 400 ' lmet)
+)
+
+(deflayer numbers
+  _
+  _         _    _    _    _    _    _    _    _    _    _    _    _    _
+  _         [    7    8    9    ]    _    _    _    _    _    _    _    _
+  _         @m_' @a_4 @c_5 @s_6 =    -    lsft lctl lalt lmet _    _
+  _    \    `    1    2    3    0    _    _    _    _    _         _
+  _    _    _              _                             _         _
+)
