@@ -38,8 +38,8 @@ alias g git
 # seem to set the mode globally, meaning if I have a ordinary
 # and an emacs terminal runnin at the same time they will share
 # keybindings.
-if test $INSIDE_EMACS
-    fish_default_key_bindings
-else
-    fish_vi_key_bindings
-end
+# if test $INSIDE_EMACS
+#     fish_default_key_bindings
+# else
+#     fish_vi_key_bindings
+# end
