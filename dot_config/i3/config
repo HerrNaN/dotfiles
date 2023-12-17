@@ -197,7 +197,7 @@ bindsym $mod+Shift+r restart
 
 # enable transpanrancy
 #exec --no-startup-id picom --experimental-backends -b
-exec_always --no-startup-id picom -bc
+exec_always --no-startup-id picom -b
 exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/gruv-arch.png
 
 # exit i3 (logs you out of your X session)
