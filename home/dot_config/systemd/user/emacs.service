@@ -3,10 +3,10 @@ Description=Emacs server daemon
 Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/
 
 [Service]
-Type=forking
-ExecStart=sh -c 'emacs --daemon && emacsclient -c --eval "(delete-frame)"'
-ExecStop=/usr/bin/emacsclient --no-wait --eval "(progn (setq kill-emacs-hook nil) (kill emacs))"
-Restart=on-failure
+Type=simple
+ExecStart=%h/.local/bin/emacs --fg-daemon
+ExecStop=%h/.local/bin/emacsclient --eval "(kill-emacs)"
+Restart=no
 
 [Install]
 WantedBy=default.target
