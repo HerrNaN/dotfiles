@@ -1,8 +1,6 @@
 #+TITLE: DoomEmacs config
 #+AUTHOR: Karl Wikström
 
-;; Emacs doesn't play well with fish
-(setq shell-file-name "/bin/bash")
 
 * Personal info
 Some functionality uses this to identify you, e.g. GPG configuration, email
@@ -15,6 +13,10 @@ clients, file templates and snippets.
 Show which-key minibuffer faster
 #+begin_src elisp
 (setq which-key-idle-delay 0.5) ;; I need the help, I really do
+#+end_src
+
+Emacs doesn't play well with fish
+#+begin_src elisp
 (setq shell-file-name (executable-find "bash"))
 #+end_src
 
