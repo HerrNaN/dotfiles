@@ -1,0 +1,3 @@
+- link:
+    ~/.config/kanshi: config
+    ~/.config/systemd/user/kanshi.service:

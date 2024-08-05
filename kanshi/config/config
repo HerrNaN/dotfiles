@@ -1,0 +1,23 @@
+profile {
+    output eDP-1 enable
+}
+
+profile {
+    output "Philips Consumer Electronics Company PHL 346B1C 1322131231233" mode 3440x1440@99.982Hz
+    output eDP-1 disable
+}
+
+profile {
+    output "BNQ BenQ XL2720T W4D00153SL0" mode 1920x1080@119.982Hz
+    output eDP-1 disable
+}
+
+profile {
+    output "Samsung Electric Company LF32TU87 HNTT200668" mode 3840x2160@59.99Hz
+    output eDP-1 disable
+}
+
+profile {
+    output "Dell Inc. DELL U2719D CGLBKS2" mode 2560x1440@59.951Hz
+    output eDP-1 disable
+}

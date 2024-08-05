@@ -1,9 +1,0 @@
-profile {
-    output eDP-1 enable
-}
-
-profile {
-    output "BNQ BenQ XL2720T W4D00153SL0" mode 1920x1080@119.982Hz
-    output eDP-1 disable
-}
-

@@ -1,0 +1,238 @@
+#+TITLE: DoomEmacs config
+#+AUTHOR: Karl Wikström
+
+;; Emacs doesn't play well with fish
+(setq shell-file-name "/bin/bash")
+
+* Personal info
+Some functionality uses this to identify you, e.g. GPG configuration, email
+clients, file templates and snippets.
+#+begin_src emacs-lisp
+(setq user-full-name "Karl Wikström"
+      user-mail-address "karl@wikstrom.io")
+#+end_src
+* Defaults
+Show which-key minibuffer faster
+#+begin_src elisp
+(setq which-key-idle-delay 0.5) ;; I need the help, I really do
+(setq shell-file-name (executable-find "bash"))
+#+end_src
+
+Remove excessive prefix for evil-*
+#+begin_src elisp
+(after! which-key
+  (setq which-key-allow-multiple-replacements t)
+  (pushnew!
+   which-key-replacement-alist
+   '(("" . "\\`+?evil[-:]?\\(?:a-\\)?\\(.*\\)") . (nil . "◂\\1"))
+   '(("\\`g s" . "\\`evilem--?motion-\\(.*\\)") . (nil . "◃\\1"))
+   ))
+#+end_src
+
+Automatically discover projects in proj and work on startup
+#+begin_src elisp
+(setq projectile-ignored-projects '("~/" "/tmp" "~/.emacs.d/.local/straight/repos/"))
+(setq projectile-project-search-path '("~/proj" ("~/work" . 2)))
+(setq projectile-auto-discover t)
+#+end_src
+
+I let format package do formatting
+#+begin_src elisp
+(setq! +format-with-lsp nil)
+#+end_src
+
+Format buffer with (SPC c f)
+#+begin_src emacs-lisp
+(map! :leader
+      :desc "Format buffer"
+      :n "c f"
+      #'+format/buffer)
+#+end_src
+
+** Mode line
+Show time in modeline
+#+begin_src elisp
+(display-time-mode 1)             ; Enable time in the mode-line
+(setq display-time-24hr-format t) ; Enable 24h time format
+#+end_src
+
+Show battery percentage in mode line if on a laptop
+#+begin_src elisp
+(unless (string-match-p "^Power N/A" (battery))   ; On laptops...
+  (display-battery-mode 1))                       ; it's nice to know how much power you have
+#+end_src
+
+* UI
+** Theme
+Set the default theme.
+To try out the options run ~consult-theme~ (SPC h t)
+#+begin_src emacs-lisp
+(setq doom-theme 'doom-one)
+#+end_src
+** Frame
+Start every frame maximized
+#+begin_src emacs-lisp
+; (add-to-list 'initial-frame-alist '(fullscreen . fullboth))
+#+end_src
+This is not needed (or wanted) when I run i3 since the window automatically
+takes up as much space as I want.
+** Window
+When splitting the window I want to be able to pick from the other open buffers which should be
+shown in the new window.
+#+begin_src elisp
+(defadvice! prompt-for-buffer (&rest _)
+  :after '(evil-window-split evil-window-vsplit)
+  (consult-buffer))
+#+end_src
+** Editor
+This determines the style of line numbers in effect. If set to `nil', line
+numbers are disabled. For relative line numbers, set this to `relative'.
+#+begin_src emacs-lisp
+(setq display-line-numbers-type 't)
+#+end_src
+* Global keybinds
+** Editor
+#+begin_src emacs-lisp
+(map! :desc "Toggle line comment"
+      :n "C-/"
+      #'comment-line)
+#+end_src
+
+#+begin_src emacs-lisp
+(map! :desc "Use evil scroll up"
+      :n "C-u"
+      #'evil-scroll-up)
+#+end_src
+
+#+begin_src elisp
+(map! :leader
+      :desc "Copy buffer contents"
+      :n "b c"
+      #'doom/copy-buffer-contents)
+#+End_src
+
+#+begin_src elisp
+(map! :leader
+      :desc "Kill compilation buffer"
+      :n "c K"
+      #'kill-compilation)
+#+end_src
+
+Normally when opening a project I want to see the magit buffer of said project to get an overview of
+where I am in the development process.
+#+begin_src elisp
+(defun open-project-git (&optional arg)
+  "Switch to a project we have visited before.
+Invokes the command referenced by `projectile-switch-project-action' on switch.
+With a prefix ARG invokes `projectile-commander' instead of
+`projectile-switch-project-action.'"
+  (interactive "P")
+  (let ((projects (projectile-relevant-known-projects)))
+    (if projects
+        (projectile-completing-read
+         "Switch to project: " projects
+         :action (lambda (project)
+                   (magit-status project)))
+      (user-error "There are no known projects"))))
+
+(map! :leader
+      :desc "Magit status at project"
+      :n "g p"
+      #'open-project-git)
+#+end_src
+
+* Packages
+Add external packages
+#+begin_src elisp :tangle packages.el
+(package! feature-mode)    ; Cucumber Gherkin files
+(package! gitconfig)       ; Gitconfig
+(package! dockerfile-mode) ; Docker files
+(package! lsp-haskell)     ; Haskell LSP
+(package! gruvbox-theme)   ; Gruvbox Theme
+
+; KMonad syntax highlighting
+(package! kbd-mode
+  :recipe (:host github
+           :repo "kmonad/kbd-mode"))
+
+; Systemd syntax highlighting
+(package! systemd
+  :recipe (:host github
+           :repo "holomorph/systemd-mode"))
+#+end_src
+
+** Org
+If you use `org' and don't want your org files in the default location below,
+change `org-directory'. It must be set before org loads!
+#+begin_src emacs-lisp
+(setq org-directory "~/org/")
+#+end_src
+
+#+begin_src elisp
+(use-package! org-clock
+  :defer
+  :custom
+  (org-clock-mode-line-total 'today "Show me how much time I've worked on the task today"))
+#+end_src
+** Treemacs
+#+begin_src emacs-lisp
+(use-package! treemacs
+  :init
+  (setq treemacs-width    45            ; A little bit wider
+        treemacs-position 'left
+        treemacs-git-mode 'deferred))   ; What has changed?
+#+end_src
+*** Keybinds
+I would like to be able to access the treemacs window like in Spacemacs
+#+begin_src emacs-lisp
+(map! :leader
+      :desc "Select treemacs window"
+      :n "0"
+      #'treemacs-select-window)
+#+end_src
+** Magit
+Automatically refresh the status buffer when new changes are saved
+#+begin_src emacs-lisp
+(with-eval-after-load 'magit-mode
+  (add-hook 'after-save-hook 'magit-after-save-refresh-status t))
+#+end_src
+** LSP
+Config LSP
+#+begin_src elisp
+(use-package! lsp
+  :custom
+  (custom-set lsp-enable-links nil))
+#+end_src
+
+#+begin_src elisp
+(after! lsp
+  (setq lsp-enable-snippet nil))
+#+end_src
+*** Haskell
+#+begin_src elisp
+(use-package! lsp-haskell
+  :custom
+  (lsp-haskell-formatting-provider "stylish-haskell")
+  )
+#+end_src
+*** Go
+#+begin_src elisp
+(use-package! lsp-go
+  :custom
+  (lsp-enable-links nil)
+  )
+#+end_src
+*** Terraform
+Add custom Terraform language server
+#+begin_src elisp
+(use-package! lsp-mode
+  :config
+
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection '("/usr/bin/terraform-ls" "serve"))
+                    :major-modes '(terraform-mode)
+                    :server-id 'terraform-ls))
+
+  (add-hook 'terraform-mode-hook #'lsp)
+)
+#+end_src

@@ -1,0 +1,44 @@
+[user]
+	name = Karl Wikström
+
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	program = gpg2
+
+[init]
+	defaultBranch = main
+
+[push]
+	default = current
+
+[alias]
+	a = add
+	s = status --short
+	sw = switch
+	l = log --oneline
+	c = commit
+	r = rebase
+	f = fetch
+	F = pull
+	p = push
+	please = p --force-with-lease
+	wip = commit --all -m 'chore: wip'
+
+[url "ssh://git@github.com"]
+	insteadOf = https://github.com
+
+[url "git@skf-internal:SKF-Internal"]
+	insteadOf = https://github.com/SKF-Internal
+
+[includeIf "gitdir:~/proj/"]
+	path = ~/proj/.gitconfig
+
+[includeIf "gitdir:~/work/"]
+	path = ~/work/.gitconfig
+

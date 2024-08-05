@@ -1,0 +1,5 @@
+- link:
+    ~/.config/kmonad: config
+    ~/.config/systemd/user/:
+      glob: true
+      path: systemd/*

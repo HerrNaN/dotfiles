@@ -1,0 +1,3 @@
+- link:
+    ~/.doom.d: doom.d
+    ~/.config/systemd/user/emacs.service:
