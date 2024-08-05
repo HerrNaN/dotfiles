@@ -1,7 +1,6 @@
 #+TITLE: DoomEmacs config
 #+AUTHOR: Karl Wikström
 
-
 * Personal info
 Some functionality uses this to identify you, e.g. GPG configuration, email
 clients, file templates and snippets.
