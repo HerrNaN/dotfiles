@@ -24,7 +24,3 @@ alias ec 'emacsclient -n -a -c "emacs"'
 alias g git
 
 set -x EDITOR vim
-
-source ~/.config/fish/functions/system.fish
-source ~/.config/fish/completions/chezmoi.fish
-source ~/.asdf/asdf.fish
