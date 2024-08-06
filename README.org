@@ -1,10 +1,6 @@
 #+TITLE: README
 
-* Introduction
-This repository hosts the dotfiles (among other things) that I use to configure my system the way *I* like it.
-Feel free to use or fork it!
-** Dotfiles
-The dotfiles are setup using [[https://www.gnu.org/software/stow/][GNU Stow]], a utility that lets you symlink config files from this repo into your system.
-** System setup
-The repo also contains configurations for [[https://wiki.archlinux.org/title/Pacman][pacman]] along with the explicitly installed packages used in my system.
-To install the configuration and the packages run ~./install-packages.sh~.
+* Usage
+#+begin_src bash
+git clone https://github.com/herrnan/dotfiles && ./dotfiles/install
+#+end_src
