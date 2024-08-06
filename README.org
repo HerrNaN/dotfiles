@@ -1,5 +1,3 @@
-#+TITLE: README
-
 * Usage
 #+begin_src bash
 git clone https://github.com/herrnan/dotfiles && ./dotfiles/install
