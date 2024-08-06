@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -e
+
+BASE_CONFIG="base.conf.yaml"
+DOTBOT_DIR=".dotbot"
+DOTBOT_BIN="bin/dotbot"
+
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+cd "${BASEDIR}"
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+git submodule update --init --recursive "${DOTBOT_DIR}"
+
+for CONFIG in $(find ${BASEDIR} -name 'install.conf.yaml'); do
+    CONTENT="$(echo | cat "${BASEDIR}/${BASE_CONFIG}" - "${CONFIG}")"
+    "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d $(dirname "${CONFIG}") -c <(echo -e "${CONTENT}")
+done

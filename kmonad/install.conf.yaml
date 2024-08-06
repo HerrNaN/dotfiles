@@ -1,0 +1,4 @@
+- link:
+    ~/.config/kmonad: config
+    ~/.config/systemd/user/kmonad-ergo_860.service:
+    ~/.config/systemd/user/kmonad-nembus.service:

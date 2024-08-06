@@ -1,0 +1,12 @@
+[Unit]
+Description=Emacs server daemon
+Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/emacs --fg-daemon
+ExecStop=%h/.local/bin/emacsclient --eval "(kill-emacs)"
+Restart=no
+
+[Install]
+WantedBy=default.target
