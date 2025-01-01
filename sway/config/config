@@ -15,7 +15,7 @@ set $down j
 set $up k
 set $right l
 
-set $term foot
+set $term foot -- distrobox enter arch
 set $rofi_cmd rofi \
         -terminal '$term'
 set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
