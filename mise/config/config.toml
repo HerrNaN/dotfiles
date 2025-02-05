@@ -1,0 +1,5 @@
+[tools]
+bat = "latest"
+eza = "latest"
+neovim = "latest"
+usage = "latest"

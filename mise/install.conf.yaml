@@ -1,0 +1,4 @@
+- link:
+    ~/.config/mise: config
+- shell:
+    - ./install_mise.sh
