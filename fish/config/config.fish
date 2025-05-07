@@ -32,3 +32,7 @@ alias g git
 if type -q nvim
     alias vim nvim
 end
+
+if type -q bat
+    alias cat bat
+end
