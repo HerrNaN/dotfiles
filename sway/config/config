@@ -24,7 +24,8 @@ output * bg /usr/share/backgrounds/default.png fill
 
 exec_always 'systemctl --user reload kanshi'
 
-bindsym $mod+Return exec $term
+bindsym $mod+Return exec $term distrobox enter arch
+bindsym $mod+Shift+Return exec $term
 bindsym $mod+Shift+q kill
 bindsym $mod+space exec $menu
 
