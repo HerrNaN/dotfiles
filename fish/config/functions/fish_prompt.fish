@@ -1,7 +1,20 @@
 function fish_prompt --description 'Write out the prompt'
     set -l last_status $status
 
-    prompt_login
+    set_color $fish_color_user
+    echo -n $USER
+    set_color normal
+
+    if test "$CONTAINER_ID"
+        echo -n 📦
+        set_color $fish_color_host
+        echo -n $CONTAINER_ID
+    else
+        echo -n @
+        set_color $fish_color_host
+        echo -n $hostname
+    end
+    set_color normal
 
     echo -n ':'
 
@@ -12,7 +25,6 @@ function fish_prompt --description 'Write out the prompt'
 
     __terlar_git_prompt
     fish_hg_prompt
-    echo
 
     if not test $last_status -eq 0
         set_color $fish_color_error
