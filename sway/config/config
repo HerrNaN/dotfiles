@@ -15,7 +15,7 @@ set $down j
 set $up k
 set $right l
 
-set $term foot -- distrobox enter arch
+set $term kitty --override confirm_os_window_close=0
 set $rofi_cmd rofi \
         -terminal '$term'
 set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
