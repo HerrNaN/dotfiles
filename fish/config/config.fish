@@ -24,6 +24,9 @@ if status --is-interactive
     mise activate fish | source
 end
 
+# Connect to gnome-keyring ssh agent
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
+
 # Alias
 alias d docker
 alias ec 'emacsclient -n -a -c "emacs"'
