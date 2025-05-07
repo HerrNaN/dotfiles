@@ -18,6 +18,8 @@ fish_add_path \
     ~/go/bin \
     ~/proj/doomemacs/bin
 
+set -x EDITOR vim
+
 if status --is-interactive
     mise activate fish | source
 end
@@ -27,4 +29,6 @@ alias d docker
 alias ec 'emacsclient -n -a -c "emacs"'
 alias g git
 
-set -x EDITOR vim
+if type -q nvim
+    alias vim nvim
+end
