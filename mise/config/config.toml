@@ -1,5 +1,11 @@
 [tools]
 bat = "latest"
+dive = "latest"
 eza = "latest"
+fd = "latest"
+fzf = "latest"
 neovim = "latest"
+node = "latest"
 usage = "latest"
+zoxide = "latest"
+pnpm = "latest"
