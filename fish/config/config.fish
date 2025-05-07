@@ -18,6 +18,10 @@ fish_add_path \
     ~/go/bin \
     ~/proj/doomemacs/bin
 
+if status --is-interactive
+    mise activate fish | source
+end
+
 # Alias
 alias d docker
 alias ec 'emacsclient -n -a -c "emacs"'
