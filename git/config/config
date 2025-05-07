@@ -33,12 +33,8 @@
 [url "ssh://git@github.com"]
 	insteadOf = https://github.com
 
-[url "git@skf-internal:SKF-Internal"]
-	insteadOf = https://github.com/SKF-Internal
-
 [includeIf "gitdir:~/proj/"]
 	path = ~/proj/.gitconfig
 
 [includeIf "gitdir:~/work/"]
 	path = ~/work/.gitconfig
-
