@@ -1,0 +1,8 @@
+theme = "dark_plus"
+
+[editor]
+cursorline = true
+
+[editor.cursor-shape]
+insert = "bar"
+
