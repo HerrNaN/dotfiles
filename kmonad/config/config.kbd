@@ -50,17 +50,17 @@
   s_f (tap-hold-next-release 200 f lsft)
   c_d (tap-hold-next-release 200 d lctl)
   a_s (tap-hold-next-release 200 s lalt)
-  m_a (tap-hold-next-release 400 a lmet)
+  m_a (tap-hold-next-release 200 a lmet)
 
   s_j (tap-hold-next-release 200 j lsft)
   c_k (tap-hold-next-release 200 k lctl)
   a_l (tap-hold-next-release 200 l lalt)
-  m_; (tap-hold-next-release 400 ; lmet)
+  m_; (tap-hold-next-release 200 ; lmet)
 
   s_6 (tap-hold-next-release 200 6 lsft)
   c_5 (tap-hold-next-release 200 5 lctl)
   a_4 (tap-hold-next-release 200 4 lalt)
-  m_' (tap-hold-next-release 400 ' lmet)
+  m_' (tap-hold-next-release 200 ' lmet)
 )
 
 (deflayer numbers
