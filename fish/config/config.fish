@@ -44,3 +44,7 @@ end
 if type -q bat
     alias cat bat
 end
+
+if type -q fzf
+    fzf --fish | source
+end
