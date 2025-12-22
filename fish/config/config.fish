@@ -18,7 +18,6 @@ fish_add_path \
     ~/go/bin \
     ~/proj/doomemacs/bin
 
-set -x EDITOR vim
 
 if status --is-interactive
     mise activate fish | source
@@ -31,6 +30,12 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
 alias d docker
 alias ec 'emacsclient -n -a -c "emacs"'
 alias g git
+
+if type -q hx
+    set -x EDITOR hx
+else
+    set -x EDITOR vim
+end
 
 if type -q nvim
     alias vim nvim
