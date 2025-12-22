@@ -1,0 +1,12 @@
+gui:
+  nerdFontsVersion: "3"
+git:
+  pagers:
+    - pager: delta --paging=never --line-numbers
+keybinding:
+  universal:
+    nextBlock-alt2: <disabled>
+    prevBlock-alt2: <disabled>
+    nextTab: '<tab>'
+    prevTab: '<backTab>'
+
