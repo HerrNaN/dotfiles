@@ -5,4 +5,5 @@ cursorline = true
 
 [editor.cursor-shape]
 insert = "bar"
+select = "underline"
 
