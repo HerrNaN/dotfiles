@@ -16,18 +16,14 @@ set $up k
 set $right l
 
 set $term kitty --override confirm_os_window_close=0
-set $rofi_cmd rofi \
-        -terminal '$term'
-set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
-
-output * bg /usr/share/backgrounds/default.png fill
 
 exec_always 'systemctl --user reload kanshi'
 
 bindsym $mod+Return exec $term distrobox enter arch
 bindsym $mod+Shift+Return exec $term
 bindsym $mod+Shift+q kill
-bindsym $mod+space exec $menu
+bindsym $mod+space exec dms ipc call spotlight open
+bindsym $mod+Shift+space exec dms ipc call powermenu toggle
 
 focus_wrapping no
 default_border pixel 2
@@ -42,7 +38,7 @@ floating_modifier $mod normal
 
 bindsym $mod+Shift+c reload
 
-bindsym $mod+Shift+Escape exec swaylock -f
+bindsym $mod+Shift+Escape exec dms ipc call lock lock
 bindsym $mod+Shift+p exec grim -g "$(slurp)" - | swappy -f -
 
 # Exit sway (logs you out of your Wayland session)
@@ -99,7 +95,7 @@ bindsym $mod+e layout toggle split
 
 bindsym $mod+f fullscreen
 
-bindsym $mod+Shift+space floating toggle
+# bindsym $mod+Shift+space floating toggle
 
 bindsym $mod+a focus parent
 
@@ -125,6 +121,8 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
 # Include configs from 3 locations:
 #  - /usr/share/sway/config.d
