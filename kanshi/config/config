@@ -26,3 +26,13 @@ profile {
     output "Dell Inc. DELL U2719D CGLBKS2" mode 2560x1440@59.951Hz
     output eDP-1 disable
 }
+
+profile {
+    output "Samsung Electric Company LS27A800U HNMTC00490" mode 3840x2160@59.997Hz
+    output eDP-1 disable
+}
+
+profile {
+    output "HP Inc. HP E27q G5 CNC3050LBD" mode 2560x1440@59.951Hz
+    output eDP-1 disable
+}
