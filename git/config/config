@@ -37,6 +37,9 @@
 [includeIf "gitdir:~/proj/"]
 	path = ~/proj/.gitconfig
 
+[includeIf "gitdir:~/dotfiles/"]
+	path = ~/proj/.gitconfig
+
 [includeIf "gitdir:~/work/"]
 	path = ~/work/.gitconfig
 [interactive]
