@@ -14,5 +14,5 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 for CONFIG in $(find ${BASEDIR} -name 'install.conf.yaml'); do
     CONTENT="$(echo | cat "${BASEDIR}/${BASE_CONFIG}" - "${CONFIG}")"
-    "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d $(dirname "${CONFIG}") -c <(echo -e "${CONTENT}")
+    "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d $(dirname "${CONFIG}") -c <(echo -e "${CONTENT}") "${@}"
 done
