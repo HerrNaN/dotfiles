@@ -15,7 +15,8 @@
             "git log *": "allow",
             "git grep *": "allow",
             "az *": "deny",
-            "az boards work-item show *": "allow"
+            "az boards work-item show *": "allow",
+            "az account get-access-token *": "allow"
         }
     },
     "keybinds": {
