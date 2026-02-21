@@ -6,7 +6,7 @@
     "share": "disabled",
     "plugin": [
         "oh-my-opencode@latest"
-    ]
+    ],
     "permission": {
         "bash": {
             "git *": "deny",
