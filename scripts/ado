@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# ado — Create a git worktree from an Azure DevOps ticket and launch opencode
+#        to plan the work.
+#
+# Usage: ado <ticket-id>
+# Requires: git, az (with azure-devops extension), jq, opencode
+
+die() { echo "ado: $1" >&2; exit 1; }
+
+slugify() {
+  echo "$1" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-|-$//g' | cut -c1-60
+}
+
+# ── Args & checks ───────────────────────────────────────────────────────────
+
+[[ ${1:-} =~ ^[0-9]+$ ]] || { echo "Usage: ado <ticket-id>"; exit 1; }
+TICKET_ID="$1"
+
+for cmd in git az jq opencode; do command -v "$cmd" &>/dev/null || die "'$cmd' not found"; done
+git rev-parse --is-inside-work-tree &>/dev/null || die "not in a git repo"
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+REPO_NAME="$(basename "$REPO_ROOT")"
+
+# ── Fetch work item ─────────────────────────────────────────────────────────
+
+echo "Fetching ADO #${TICKET_ID}..."
+WI="$(az boards work-item show --id "$TICKET_ID" --expand relations --output json)" \
+  || die "failed to fetch #${TICKET_ID}"
+
+TITLE="$(echo "$WI" | jq -r '.fields["System.Title"] // empty')"
+[[ -n "$TITLE" ]] || die "#${TICKET_ID} has no title"
+
+BRANCH="${TICKET_ID}-$(slugify "$TITLE")"
+echo "  $(echo "$WI" | jq -r '.fields["System.WorkItemType"]') | $(echo "$WI" | jq -r '.fields["System.State"]')"
+echo "  ${TITLE}"
+echo "  Branch: ${BRANCH}"
+
+# ── Create worktree ──────────────────────────────────────────────────────────
+
+WORKTREE="$(dirname "$REPO_ROOT")/${REPO_NAME}-worktrees/${BRANCH}"
+
+if [[ -d "$WORKTREE" ]]; then
+  echo -e "\nWorktree exists, reusing..."
+else
+  git fetch origin main 2>/dev/null || true
+  mkdir -p "$(dirname "$WORKTREE")"
+  git worktree add -b "$BRANCH" "$WORKTREE" "origin/main" \
+    || die "failed to create worktree"
+  echo "Worktree created."
+fi
+
+# ── Launch opencode ───────────────────────────────────────────────────────────
+
+opencode "$WORKTREE" \
+  --prompt "I'm starting work on ADO ticket #${TICKET_ID}. Fetch the full ticket (description, acceptance criteria, comments) and explore the codebase. Then create an implementation plan. Do NOT implement yet — just plan."
