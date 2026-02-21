@@ -4,6 +4,7 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
+	pager = delta
 
 [commit]
 	gpgsign = true
@@ -38,3 +39,9 @@
 
 [includeIf "gitdir:~/work/"]
 	path = ~/work/.gitconfig
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+[merge]
+	conflictStyle = zdiff3
