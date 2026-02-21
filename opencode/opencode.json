@@ -1,9 +1,23 @@
 {
     "$schema": "https://opencode.ai/config.json",
+    "enabled_providers": [
+        "github-copilot"
+    ],
     "share": "disabled",
     "plugin": [
         "oh-my-opencode@latest"
     ]
+    "permission": {
+        "bash": {
+            "git *": "deny",
+            "git status": "allow",
+            "git diff *": "allow",
+            "git log *": "allow",
+            "git grep *": "allow",
+            "az *": "deny",
+            "az boards work-item show *": "allow"
+        }
+    },
     "keybinds": {
         "input_submit": "shift+return,ctrl+return,alt+return,ctrl+j",
         "input_newline": "return",
