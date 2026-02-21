@@ -9,4 +9,25 @@ keybinding:
     prevBlock-alt2: <disabled>
     nextTab: '<tab>'
     prevTab: '<backTab>'
+    pushFiles: <disabled>
+  branches:
+    forceCheckoutBranch: <disabled>
 
+customCommands:
+  - key: 'P'
+    description: 'Push options...'
+    command: 'git push {{.Form.Flags}}'
+    context: 'global'
+    prompts:
+      - type: 'menu'
+        title: 'Push options...'
+        key: 'Flags'
+        options:
+          - value: ''
+            name: '<none>'
+            descriptions: 'Normal push'
+            key: 'p'
+          - value: '--force-with-lease'
+            name: '--force-with-lease'
+            description: "Only force over own commits"
+            key: 'f'
