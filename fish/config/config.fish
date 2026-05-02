@@ -22,8 +22,10 @@ if test "$HOME" != (realpath $HOME)
     set -gx HOME (realpath $HOME)
 end
 
-if status --is-interactive
+if status is-interactive
     mise activate fish | source
+else
+    mise activate fish --shims | source
 end
 
 # Connect to gnome-keyring ssh agent
