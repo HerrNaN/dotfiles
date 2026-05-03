@@ -1,0 +1,15 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      // Override vim bindings for ctrl-w to avoid 1s delay on action
+      "ctrl-w": "pane::CloseActiveItem",
+    },
+  },
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "space f": "file_finder::Toggle",
+    },
+  },
+]

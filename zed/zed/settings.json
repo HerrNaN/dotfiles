@@ -1,0 +1,62 @@
+{
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+
+  // UI
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark",
+  },
+  "ui_font_size": 18,
+  "tab_bar": {
+    "show": false,
+    "show_nav_history_buttons": false,
+  },
+  "title_bar": {
+    "show_sign_in": false,
+    "show_user_menu": false,
+  },
+  "project_panel": {
+    "dock": "left",
+  },
+
+  // Buffers
+  "buffer_font_size": 14,
+  "buffer_font_features": {
+    "calt": false,
+  },
+  "show_edit_predictions": false,
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+    },
+  },
+
+  // Vim
+  "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "always",
+    "cursor_shape": {
+      "visual": "underline",
+    },
+  },
+
+  // LSP
+  "lsp": {
+    "css-variables": {
+      "settings": {
+        "cssVariables": {
+          "lookupFiles": ["**/*.css", "**/*.html", "**/*.svelte"],
+        },
+      },
+    },
+  },
+}
