@@ -1,6 +1,7 @@
 gui:
   nerdFontsVersion: "3"
 git:
+  overrideGpg: true
   pagers:
     - pager: delta --paging=never --line-numbers
 keybinding:
