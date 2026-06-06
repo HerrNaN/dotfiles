@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+cd $(mktemp -d)
+
+git clone "$1" "$(pwd)"
+
+opencode
