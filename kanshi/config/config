@@ -36,3 +36,13 @@ profile {
     output "HP Inc. HP E27q G5 CNC3050LBD" mode 2560x1440@59.951Hz
     output eDP-1 disable
 }
+
+profile {
+    output "Dell Inc. DELL U2412M 0FFXD315155S" mode 1920x1200@59.950Hz
+    output eDP-1 disable
+}
+
+profile {
+    output "GIGA-BYTE TECHNOLOGY CO., LTD. AORUS FO32U2P 25300B000493" mode 3840x2160@240.000Hz
+    output eDP-1 disable
+}
