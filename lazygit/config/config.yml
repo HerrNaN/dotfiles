@@ -8,7 +8,7 @@ keybinding:
     nextBlock-alt2: <disabled>
     prevBlock-alt2: <disabled>
     nextTab: '<tab>'
-    prevTab: '<backTab>'
+    prevTab: '<backtab>'
     pushFiles: <disabled>
   branches:
     forceCheckoutBranch: <disabled>
