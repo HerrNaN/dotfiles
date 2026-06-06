@@ -1,3 +1,8 @@
+#:schema https://mise.en.dev/schema/mise.json
+
+[settings]
+npm.package_manager = "pnpm"
+
 [tools]
 bat = "latest"
 dive = "latest"
