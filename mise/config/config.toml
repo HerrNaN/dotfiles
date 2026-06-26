@@ -3,6 +3,10 @@
 [settings]
 npm.package_manager = "pnpm"
 
+[tool_alias]
+zed = "github:zed-industries/zed"
+lazygit = "github:jesseduffield/lazygit"
+
 [tools]
 bat = "latest"
 dive = "latest"
@@ -23,5 +27,6 @@ github-cli = "latest"
 uv = "latest"
 "npm:@openchamber/web" = "latest"
 opencode = "latest"
-"github:zed-industries/zed" = "latest"
+zed = "latest"
+lazygit = "latest"
 watchexec = "latest"
