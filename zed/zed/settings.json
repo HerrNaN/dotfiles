@@ -1,40 +1,30 @@
 {
-  "edit_predictions": null,
-  "semantic_tokens": "combined",
-  "which_key": {
-    "enabled": true,
-    "delay_ms": 250,
-  },
-  "icon_theme": {
-    "mode": "dark",
-    "light": "Zed (Default)",
-    "dark": "Zed (Default)",
-  },
-  "terminal": {
-    "font_family": ".ZedMono",
-  },
+  // Core
   "cli_default_open_behavior": "new_window",
   "telemetry": {
     "diagnostics": false,
     "metrics": false,
   },
-
   "auto_update": false,
 
   // UI
+  "edit_predictions": null,
+  "semantic_tokens": "combined",
   "theme": {
-    "mode": "dark",
     "light": "Ayu Light",
     "dark": "Ayu Dark",
   },
+  "icon_theme": {
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
   "ui_font_size": 18,
+  "terminal": {
+    "font_family": ".ZedMono",
+  },
   "tab_bar": {
     "show": true,
     "show_nav_history_buttons": false,
-  },
-  "title_bar": {
-    // "show_sign_in": false,
-    // "show_user_menu": false,
   },
   "project_panel": {
     "dock": "left",
@@ -78,6 +68,10 @@
         },
       },
     },
+  },
+  "which_key": {
+    "enabled": true,
+    "delay_ms": 250,
   },
 
   // LSP
