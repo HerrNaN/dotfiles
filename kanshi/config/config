@@ -43,6 +43,6 @@ profile {
 }
 
 profile {
-    output "GIGA-BYTE TECHNOLOGY CO., LTD. AORUS FO32U2P 25300B000493" mode 3840x2160@240.000Hz
+    output "GIGA-BYTE TECHNOLOGY CO., LTD. AORUS FO32U2P 25300B000493" mode 3840x2160@120.000Hz
     output eDP-1 disable
 }
