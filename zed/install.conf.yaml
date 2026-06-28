@@ -2,3 +2,4 @@
     # The directory here needs to be named `zed` until:
     # https://github.com/zed-industries/zed/pull/54943 is fixed
     ~/.config/zed:
+    ~/.local/share/applications/zed.desktop:
