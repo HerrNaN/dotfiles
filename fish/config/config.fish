@@ -18,10 +18,6 @@ fish_add_path \
     ~/go/bin \
     ~/proj/doomemacs/bin
 
-if test "$HOME" != (realpath $HOME)
-    set -gx HOME (realpath $HOME)
-end
-
 if status is-interactive
     mise activate fish | source
 else
