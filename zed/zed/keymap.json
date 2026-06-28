@@ -1,5 +1,17 @@
 [
   {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-g": [
+        "task::Spawn",
+        {
+          "task_name": "LazyGit",
+          "reveal_target": "center",
+        },
+      ],
+    },
+  },
+  {
     "context": "Editor",
     "bindings": {
       // Override vim bindings for ctrl-w to avoid 1s delay on action
