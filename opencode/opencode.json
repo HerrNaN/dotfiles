@@ -11,18 +11,30 @@
 
     "bash": {
       "*": "ask",
-      "git *": "ask",
+
+      // Allowed system utils
+      "grep": "allow",
+      "sort": "allow",
+      "head": "allow",
+      "uniq": "allow",
+      "wc": "allow",
+      "ls": "allow",
+
+      // Blacklist
+      "npx": "deny",
+      "npm": "deny",
+      "python*": "deny",
+
+      // Git
       "git status *": "allow",
       "git branch -a": "allow",
       "git diff *": "allow",
       "git log *": "allow",
       "git grep *": "allow",
       "git commit *": "allow",
+      "git tag -l*": "allow",
       "git show *": "allow",
-      "git ls-remote *": "allow",
-      "az *": "deny",
-      "az boards work-item show *": "allow",
-      "az account get-access-token *": "allow"
+      "git ls-remote *": "allow"
     }
   },
   "mcp": {
