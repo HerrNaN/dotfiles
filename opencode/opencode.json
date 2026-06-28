@@ -3,6 +3,7 @@
   "default_agent": "plan",
   "permission": {
     "bash": {
+      "*": "ask",
       "git *": "ask",
       "git status *": "allow",
       "git branch -a": "allow",
