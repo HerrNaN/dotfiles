@@ -1,0 +1,32 @@
+{
+  "$schema": "https://opencode.ai/v2/cli.json",
+  "theme": {
+    "name": "opencode",
+    "mode": "dark"
+  },
+  "keybinds": {
+    "agent.cycle": "tab",
+    "input.submit": "shift+return,ctrl+return,alt+return,ctrl+j",
+    "input.newline": "return"
+  },
+  "diffs": {
+    "wrap": "word"
+  },
+  "session": {
+    "sidebar": "hide",
+    "scrollbar": false,
+    "thinking": "hide",
+    "grouping": "auto",
+    "markdown": "source",
+    "tps": false,
+    "verbosity": "high"
+  },
+  "animations": true,
+  "attention": {
+    "notifications": true,
+    "sound": true
+  },
+  "tabs": {
+    "indicators": "status"
+  }
+}
