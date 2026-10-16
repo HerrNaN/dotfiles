@@ -13,12 +13,12 @@ profile {
 }
 
 profile {
-    output "Samsung Electric Company LF32TU87 HNTT200668" mode 3840x2160@59.99Hz
+    output "Samsung Electric Company LF32TU87 HNTT200668" mode 3840x2160@59.99Hz scale 1.5
     output eDP-1 disable
 }
 
 profile {
-    output "Samsung Electric Company C34H89x H4ZRC05084" mode 3440x1440@59.973Hz
+    output "Samsung Electric Company C34H89x H4ZRC05084" mode 3440x1440@59.973Hz scale 1.5
     output eDP-1 disable
 }
 
@@ -28,7 +28,7 @@ profile {
 }
 
 profile {
-    output "Samsung Electric Company LS27A800U HNMTC00490" mode 3840x2160@59.997Hz
+    output "Samsung Electric Company LS27A800U HNMTC00490" mode 3840x2160@59.997Hz scale 1.5
     output eDP-1 disable
 }
 
@@ -43,6 +43,6 @@ profile {
 }
 
 profile {
-    output "GIGA-BYTE TECHNOLOGY CO., LTD. AORUS FO32U2P 25300B000493" mode 3840x2160@120.000Hz
+    output "GIGA-BYTE TECHNOLOGY CO., LTD. AORUS FO32U2P 25300B000493" mode 3840x2160@120.000Hz scale 1.5
     output eDP-1 disable
 }
