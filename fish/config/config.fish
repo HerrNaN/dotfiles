@@ -31,7 +31,6 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
 alias d docker
 alias ec 'emacsclient -n -a -c "emacs"'
 alias g git
-alias fp 'cd (find ~/proj -maxdepth 1 -mindepth 1 -type d | fzf)'
 
 if type -q hx
     set -x EDITOR hx
