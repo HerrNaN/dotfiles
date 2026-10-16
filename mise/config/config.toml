@@ -6,6 +6,7 @@ npm.package_manager = "pnpm"
 [tool_alias]
 zed = "github:zed-industries/zed"
 lazygit = "github:jesseduffield/lazygit"
+opencode = "npm:@opencode/cli"
 
 [tools]
 bat = "latest"
@@ -24,7 +25,7 @@ yazi = "latest"
 bun = "latest"
 github-cli = "latest"
 uv = "latest"
-opencode = "latest"
 zed = "latest"
 lazygit = "latest"
 watchexec = "latest"
+opencode = { version = "latest", allow_builds = ["@opencode/cli"] }
