@@ -3,8 +3,8 @@ gui:
   nerdFontsVersion: "3"
 git:
   overrideGpg: true
-  pagers:
-    - pager: delta --paging=never --line-numbers
+  diffRenderers:
+    - command: delta --paging=never --line-numbers
 keybinding:
   universal:
     nextBlock-alt2: <disabled>
@@ -14,7 +14,6 @@ keybinding:
     pushFiles: <disabled>
   branches:
     forceCheckoutBranch: <disabled>
-
 customCommands:
   - key: 'P'
     description: 'Push options...'
