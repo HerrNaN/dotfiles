@@ -18,9 +18,9 @@
     "light": "Zed (Default)",
     "dark": "Zed (Default)",
   },
-  "ui_font_size": 18,
+  "ui_font_size": 16,
   "terminal": {
-    "font_family": ".ZedMono",
+    "font_family": "Hack Nerd Font Mono",
   },
   "tab_bar": {
     "show": true,
@@ -36,7 +36,7 @@
   },
 
   // Buffers
-  "buffer_font_size": 14,
+  "buffer_font_size": 13,
   "buffer_font_features": {
     "calt": false,
   },
