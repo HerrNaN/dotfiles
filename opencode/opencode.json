@@ -5,6 +5,8 @@
     { "action": "external_directory", "resource": "~/go/pkg/mod/**", "effect": "allow" },
     { "action": "edit", "resource": "~/go/pkg/mod/**", "effect": "deny" },
 
+    { "action": "shell", "resource": "*", "effect": "ask" },
+
     // Allowed system utils
     { "action": "shell", "resource": "grep *", "effect": "allow" },
     { "action": "shell", "resource": "sort *", "effect": "allow" },
@@ -28,8 +30,6 @@
     // Git
     { "action": "shell", "resource": "git *", "effect": "allow" },
     { "action": "shell", "resource": "git push *", "effect": "ask" },
-
-    { "action": "shell", "resource": "*", "effect": "ask" },
   ],
   "mcp": {
     "servers": {
@@ -37,6 +37,9 @@
         "type": "remote",
         "url": "https://mcp.context7.com/mcp",
         "disabled": false,
+        "headers": {
+          "CONTEXT7_API_KEY": "ctx7sk-e42c7077-c982-4ff9-bb3b-28a4295aec2f"
+        }
       }
     }
   }
